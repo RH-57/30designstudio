@@ -429,87 +429,130 @@
 
                 <!-- SERVICE ITEM -->
                 <div class="group bg-white rounded-3xl shadow-sm hover:shadow-xl transition overflow-hidden">
-                    <div class="relative h-48 overflow-hidden">
+                    <div class="group relative h-80 rounded-3xl overflow-hidden shadow-lg">
+
+                        <!-- IMAGE -->
                         <img
-                            src="{{ asset('assets/website/services/logo-design.jpg') }}"
+                            src="{{ asset('assets/website/services/service-1.webp') }}"
                             alt="Desain Logo"
-                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                            class="absolute inset-0 w-full h-full object-cover
+                                group-hover:scale-105 transition duration-700"
                         >
+
+                        <!-- DARK OVERLAY -->
+                        <div class="absolute inset-0 bg-gradient-to-t
+                                    from-black/70 via-black/30 to-transparent">
+                        </div>
+
+                        <!-- CONTENT -->
+                        <div class="relative z-10 h-full flex flex-col justify-end p-6 text-center">
+
+                            <h3 class="text-xl font-extrabold text-white mb-4
+                                    drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+                                Desain Logo
+                            </h3>
+
+                            <a
+                                href="https://wa.me/628xxxxxxxxx?text=Halo%20saya%20ingin%20pesan%20jasa%20Desain%20Logo"
+                                target="_blank"
+                                class="inline-flex justify-center items-center
+                                    px-6 py-2 mx-auto text-sm font-semibold text-white rounded-full
+                                    bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
+                                    shadow-lg shadow-black/40
+                                    hover:opacity-90 transition">
+                                Pesan Sekarang
+                            </a>
+
+                        </div>
                     </div>
 
-                    <div class="p-6 text-center space-y-4">
-                        <h3 class="text-lg font-bold text-gray-800">
-                            Desain Logo
-                        </h3>
-
-                        <a
-                            href="https://wa.me/628xxxxxxxxx?text=Halo%20saya%20ingin%20pesan%20jasa%20Desain%20Logo"
-                            target="_blank"
-                            class="inline-flex items-center justify-center px-6 py-2 text-sm font-semibold text-white rounded-full
-                                bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
-                                hover:opacity-90 transition">
-                            Pesan Sekarang
-                        </a>
-                    </div>
                 </div>
 
                 <!-- SERVICE ITEM -->
                 <div class="group bg-white rounded-3xl shadow-sm hover:shadow-xl transition overflow-hidden">
-                    <div class="relative h-48 overflow-hidden">
+                    <div class="group relative h-80 rounded-3xl overflow-hidden shadow-lg">
+
+                        <!-- IMAGE -->
                         <img
-                            src="{{ asset('assets/website/services/packaging.jpg') }}"
-                            alt="Desain Packaging"
-                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                            src="{{ asset('assets/website/services/service-2.webp') }}"
+                            alt="Desain Logo"
+                            class="absolute inset-0 w-full h-full object-cover
+                                group-hover:scale-105 transition duration-700"
                         >
+
+                        <!-- DARK OVERLAY -->
+                        <div class="absolute inset-0 bg-gradient-to-t
+                                    from-black/70 via-black/30 to-transparent">
+                        </div>
+
+                        <!-- CONTENT -->
+                        <div class="relative z-10 h-full flex flex-col justify-end p-6 text-center">
+
+                            <h3 class="text-xl font-extrabold text-white mb-4
+                                    drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+                                Desain Packaging
+                            </h3>
+
+                            <a
+                                href="https://wa.me/628xxxxxxxxx?text=Halo%20saya%20ingin%20pesan%20jasa%20Desain%20Logo"
+                                target="_blank"
+                                class="inline-flex justify-center items-center
+                                    px-6 py-2 mx-auto text-sm font-semibold text-white rounded-full
+                                    bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
+                                    shadow-lg shadow-black/40
+                                    hover:opacity-90 transition">
+                                Pesan Sekarang
+                            </a>
+
+                        </div>
                     </div>
 
-                    <div class="p-6 text-center space-y-4">
-                        <h3 class="text-lg font-bold text-gray-800">
-                            Desain Packaging
-                        </h3>
-
-                        <a
-                            href="https://wa.me/628xxxxxxxxx?text=Halo%20saya%20ingin%20pesan%20jasa%20Desain%20Packaging"
-                            target="_blank"
-                            class="inline-flex items-center justify-center px-6 py-2 text-sm font-semibold text-white rounded-full
-                                bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
-                                hover:opacity-90 transition">
-                            Pesan Sekarang
-                        </a>
-                    </div>
                 </div>
 
                 <!-- SERVICE ITEM -->
                 <div class="group bg-white rounded-3xl shadow-sm hover:shadow-xl transition overflow-hidden">
-                    <div class="relative h-48 overflow-hidden">
+                    <div class="group relative h-80 rounded-3xl overflow-hidden shadow-lg">
+
+                        <!-- IMAGE -->
                         <img
-                            src="{{ asset('assets/website/services/poster.jpg') }}"
-                            alt="Desain Poster"
-                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                            src="{{ asset('assets/website/services/service-3.webp') }}"
+                            alt="Desain Logo"
+                            class="absolute inset-0 w-full h-full object-cover
+                                group-hover:scale-105 transition duration-700"
                         >
+
+                        <!-- DARK OVERLAY -->
+                        <div class="absolute inset-0 bg-gradient-to-t
+                                    from-black/70 via-black/30 to-transparent">
+                        </div>
+
+                        <!-- CONTENT -->
+                        <div class="relative z-10 h-full flex flex-col justify-end p-6 text-center">
+
+                            <h3 class="text-xl font-extrabold text-white mb-4
+                                    drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+                                Desain Grafis
+                            </h3>
+
+                            <a
+                                href="https://wa.me/628xxxxxxxxx?text=Halo%20saya%20ingin%20pesan%20jasa%20Desain%20Logo"
+                                target="_blank"
+                                class="inline-flex justify-center items-center
+                                    px-6 py-2 mx-auto text-sm font-semibold text-white rounded-full
+                                    bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
+                                    shadow-lg shadow-black/40
+                                    hover:opacity-90 transition">
+                                Pesan Sekarang
+                            </a>
+
+                        </div>
                     </div>
 
-                    <div class="p-6 text-center space-y-4">
-                        <h3 class="text-lg font-bold text-gray-800">
-                            Desain Poster
-                        </h3>
-
-                        <a
-                            href="https://wa.me/628xxxxxxxxx?text=Halo%20saya%20ingin%20pesan%20jasa%20Desain%20Poster"
-                            target="_blank"
-                            class="inline-flex items-center justify-center px-6 py-2 text-sm font-semibold text-white rounded-full
-                                bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
-                                hover:opacity-90 transition">
-                            Pesan Sekarang
-                        </a>
-                    </div>
                 </div>
 
             </div>
         </div>
     </section>
-
-
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="relative py-24 bg-white overflow-hidden">
