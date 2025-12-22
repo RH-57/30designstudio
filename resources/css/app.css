@@ -21,3 +21,39 @@
     width: 100%;
     animation: loadingBar 1.4s infinite ease-in-out;
 }
+
+@keyframes marquee-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes marquee-right {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.logo-item {
+    width: 140px;
+    display: flex;
+    justify-content: center;
+}
+.logo-item img {
+    height: 56px;
+    object-fit: contain;
+    opacity: .6;
+    filter: grayscale(1);
+    transition: .3s;
+}
+.logo-item img:hover {
+    opacity: 1;
+    filter: grayscale(0);
+}
+

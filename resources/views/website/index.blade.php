@@ -36,7 +36,7 @@
     <!-- Floating Header (TailwindCSS v4) -->
     @include('website.components.header')
 
-    <section id="hero" class="relative pt-25 pb-20 bg-white overflow-hidden">
+    <section id="hero" class="relative pt-30 pb-20 bg-white overflow-hidden">
 
         <!-- Soft Gradient -->
         <div class="absolute inset-0 -z-10">
@@ -82,23 +82,26 @@
 
                 <!-- RIGHT IMAGE -->
                 <div class="relative flex justify-center md:justify-end">
-
-                    <!-- GRADIENT SHAPE (LEBIH KECIL) -->
-                    <div class="relative
+                    <!-- GRADIENT SHAPE (UKURAN TETAP) -->
+                    <div id="scroll-image-container" class="relative
                         w-[240px] h-[240px]
                         md:w-[300px] md:h-[300px]
                         lg:w-[340px] lg:h-[340px]
-                        rounded-[2.5rem]
-                        bg-gradient-to-br from-orange-500 via-pink-500 to-purple-600
-                        flex items-center justify-center">
+                        rounded-full"> <!-- Tambahkan overflow-hidden -->
 
-                        <!-- IMAGE (LEBIH BESAR & DOMINAN) -->
+                        <!-- GRADIENT BLUR BACKGROUND -->
+                        <div class="absolute inset-0 rounded-full
+                            bg-gradient-to-br from-orange-500 via-pink-500 to-purple-600
+                            opacity-60 blur-xl">
+                        </div>
+
+                        <!-- IMAGE (DIPERBESAR KELUAR DARI CONTAINER) -->
                         <img
                             src="{{ asset('assets/website/img/about.png') }}"
                             alt="Contoh Desain"
-                            class="w-[95%] h-auto object-contain drop-shadow-2xl">
+                            id="scroll-image"
+                            class="w-[200%] h-auto object-contain drop-shadow-2xl"> <!-- w-[120%] untuk lebih besar -->
                     </div>
-
                 </div>
             </div>
         </div>
@@ -180,7 +183,7 @@
         <!-- Soft Gradient Background -->
         <div class="absolute inset-0 -z-10">
             <div class="absolute top-10 right-10 w-96 h-96 bg-orange-100/40 blur-3xl rounded-full"></div>
-            <div class="absolute -bottom-20 left-0 w-[500px] h-[500px] bg-yellow-100/40 blur-3xl rounded-full"></div>
+            <div class="absolute -bottom-20 left-0 w-[500px] h-[500px] bg-pink-100/40 blur-3xl rounded-full"></div>
         </div>
 
         <!-- WRAPPER -->
@@ -189,11 +192,14 @@
             <!-- TITLE -->
             <div class="text-center mb-14">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">
-                    Tentang <span class="text-orange-600">Kami</span>
+                    Cerita di Balik
+                    <span class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+                        Karya Kami
+                    </span>
                 </h2>
                 <p class="text-gray-600 text-sm mt-4 max-w-2xl mx-auto">
-                    Kami adalah perusahaan konstruksi profesional yang berkomitmen memberikan
-                    kualitas terbaik, ketepatan waktu, dan hasil yang memuaskan pada setiap proyek.
+                    30Design.Studio adalah studio desain kreatif yang membantu brand tampil profesional
+                    melalui desain visual yang kuat, strategis, dan relevan.
                 </p>
             </div>
 
@@ -201,22 +207,37 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
 
                 <!-- LEFT VIDEO -->
-                <div class="flex justify-center">
-                    <div class="rounded-2xl overflow-hidden shadow-xl w-full max-w-md md:max-w-lg">
-                        <iframe id="about-video"
-                            class="w-full aspect-video"
-                            src="https://www.youtube.com/embed/ScMzIvxBSi4?enablejsapi=1&controls=0&modestbranding=1&playsinline=1&rel=0&mute=1&autoplay=0"
-                            allow="autoplay"
-                            title="Tentang Kami Video"></iframe>
+                <div class="flex justify-center relative">
+                    <div id="scroll-image-container" class="relative
+                        w-[240px] h-[240px]
+                        md:w-[300px] md:h-[300px]
+                        lg:w-[340px] lg:h-[340px]
+                        rounded-full
+                        flex items-center justify-center">
+
+                        <!-- GRADIENT BLUR BACKGROUND -->
+                        <div class="absolute inset-0 rounded-full
+                            bg-gradient-to-br from-orange-500 via-pink-500 to-purple-600
+                            opacity-60 blur-xl">
+                        </div>
+
+                        <!-- IMAGE -->
+                        <img
+                            src="{{ asset('assets/website/img/about.png') }}"
+                            alt="Contoh Desain"
+                            id="scroll-image"
+                            class="relative z-10 w-[200%] h-auto object-contain drop-shadow-2xl">
                     </div>
                 </div>
+
 
                 <!-- RIGHT TEXT & FEATURES -->
                 <div class="space-y-8">
 
                     <p class="text-gray-700 text-sm leading-relaxed">
-                        Dengan pengalaman lebih dari 10 tahun, kami telah menangani berbagai proyek skala kecil sampai besar.
-                        Kami percaya bahwa kepercayaan dan kualitas adalah kunci utama dalam setiap pekerjaan yang kami lakukan.
+                        Kami percaya desain adalah alat komunikasi brand.
+                        Dengan pendekatan kolaboratif, kami menerjemahkan kebutuhan klien
+                        menjadi desain yang efektif dan bermakna.
                     </p>
 
                     <!-- FEATURES LIST -->
@@ -224,52 +245,52 @@
 
                         <!-- Feature 1 -->
                         <div class="flex items-start gap-4">
-                            <div class="text-orange-600 text-4xl">
-                                <i class="fas fa-hard-hat"></i>
+                            <div class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-4xl">
+                                <i class="fas fa-palette"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold text-gray-800">Profesional</h4>
+                                <h4 class="text-lg font-bold text-gray-800">Desain Berkarakter</h4>
                                 <p class="text-gray-600 text-sm">
-                                    Tenaga ahli berpengalaman dan bersertifikat di bidang konstruksi.
+                                    Setiap desain dibuat unik dan disesuaikan dengan identitas brand Anda.
                                 </p>
                             </div>
                         </div>
 
                         <!-- Feature 2 -->
                         <div class="flex items-start gap-4">
-                            <div class="text-orange-600 text-4xl">
-                                <i class="fas fa-tools"></i>
+                            <div class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-4xl">
+                                <i class="fas fa-lightbulb"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold text-gray-800">Peralatan Modern</h4>
+                                <h4 class="text-lg font-bold text-gray-800">Kreatif & Strategis</h4>
                                 <p class="text-gray-600 text-sm">
-                                    Menggunakan teknologi dan peralatan terkini untuk hasil optimal.
+                                    Menggabungkan kreativitas visual dengan strategi branding yang tepat.
                                 </p>
                             </div>
                         </div>
 
                         <!-- Feature 3 -->
                         <div class="flex items-start gap-4">
-                            <div class="text-orange-600 text-4xl">
+                            <div class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-4xl">
                                 <i class="fas fa-clock"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold text-gray-800">Tepat Waktu</h4>
+                                <h4 class="text-lg font-bold text-gray-800">Tepat Waktu</h4>
                                 <p class="text-gray-600 text-sm">
-                                    Komitmen penuh untuk menyelesaikan proyek sesuai jadwal.
+                                    Komitmen menyelesaikan project sesuai timeline yang disepakati.
                                 </p>
                             </div>
                         </div>
 
                         <!-- Feature 4 -->
                         <div class="flex items-start gap-4">
-                            <div class="text-orange-600 text-4xl">
-                                <i class="fas fa-building"></i>
+                            <div class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-4xl">
+                                <i class="fas fa-layer-group"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold text-gray-800">Skala Besar & Kecil</h4>
+                                <h4 class="text-lg font-bold text-gray-800">Siap Digital & Cetak</h4>
                                 <p class="text-gray-600 text-sm">
-                                    Siap mengerjakan proyek mulai dari rumah, gedung, hingga infrastruktur.
+                                    Desain optimal untuk kebutuhan online maupun produksi cetak.
                                 </p>
                             </div>
                         </div>
@@ -281,165 +302,7 @@
         </div>
     </section>
 
-    <section id="visi" class="relative py-24 bg-white overflow-hidden">
-        <div class="absolute inset-0 -z-10">
-            <div class="absolute top-0 left-10 w-96 h-96 bg-orange-100/40 blur-3xl rounded-full"></div>
-            <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-yellow-100/40 blur-3xl rounded-full"></div>
-        </div>
-
-        <div class="w-full max-w-screen-xl mx-auto px-4 md:px-20">
-
-            <!-- TITLE -->
-            <div class="text-center mb-14">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">
-                    Visi <span class="text-orange-600">&</span> Misi
-                </h2>
-                <p class="text-gray-600 text-sm mt-4 max-w-2xl mx-auto">
-                    Landasan utama perusahaan dalam memberikan layanan konstruksi yang profesional, modern, dan berkelanjutan.
-                </p>
-            </div>
-
-            <!-- GRID -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-
-
-                <!-- CARD VISI -->
-                <div class="relative rounded-3xl shadow-lg overflow-hidden border border-orange-100
-                            bg-cover bg-center bg-no-repeat"
-                    style="background-image: url('/assets/website/img/visi.webp');">
-
-                    <!-- OVERLAY -->
-                    <div class="absolute inset-0 bg-black/40"></div>
-
-                    <!-- CONTENT -->
-                    <div class="relative p-10 text-white">
-                        <h3 class="text-3xl font-bold mb-4">Visi</h3>
-                        <p class="text-sm leading-relaxed">
-                            Menjadi perusahaan konstruksi terpercaya yang menghadirkan inovasi, kualitas,
-                            dan ketepatan dalam setiap solusi pembangunan untuk masa depan yang lebih baik.
-                        </p>
-                    </div>
-                </div>
-
-
-                <!-- CARD MISI -->
-                <div class="relative rounded-3xl shadow-lg overflow-hidden border border-orange-100
-                            bg-cover bg-center bg-no-repeat"
-                    style="background-image: url('/assets/website/img/misi.webp');">
-
-                    <!-- OVERLAY -->
-                    <div class="absolute inset-0 bg-black/40"></div>
-
-                    <!-- CONTENT -->
-                    <div class="relative p-10 text-white">
-                        <h3 class="text-3xl font-bold mb-4">Misi</h3>
-
-                        <ul class="space-y-4 text-sm leading-relaxed">
-                            <li class="flex items-start gap-3">
-                                <i class="fas fa-check mt-1 text-orange-300"></i>
-                                Memberikan layanan konstruksi berkualitas tinggi dengan standar profesional.
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fas fa-check mt-1 text-orange-300"></i>
-                                Menggunakan teknologi modern untuk meningkatkan efisiensi dan hasil proyek.
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fas fa-check mt-1 text-orange-300"></i>
-                                Menjaga ketepatan waktu sebagai komitmen utama kepada setiap klien.
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fas fa-check mt-1 text-orange-300"></i>
-                                Membangun hubungan jangka panjang berdasarkan kepercayaan dan integritas.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- PROYEK BERLANGSUNG -->
-    <section id="proyek" class="relative py-24 bg-white overflow-hidden">
-
-        <!-- Soft Gradient Background -->
-        <div class="absolute inset-0 -z-10">
-            <div class="absolute top-10 left-10 w-80 h-80 bg-orange-200/30 blur-3xl rounded-full"></div>
-            <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-yellow-200/30 blur-3xl rounded-full"></div>
-        </div>
-
-        <div class="w-full max-w-screen-xl mx-auto px-4 md:px-20">
-
-            <!-- TITLE -->
-            <div class="text-center mb-14">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">
-                    Proyek <span class="text-orange-600">Berlangsung</span>
-                </h2>
-                <p class="text-gray-600 text-sm mt-4 max-w-2xl mx-auto">
-                    Pantau aktivitas pembangunan secara real-time melalui camera CCTV.
-                </p>
-            </div>
-
-            <!-- GRID PROJECT LIST -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-
-                <!-- PROJECT CARD 1 -->
-                <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition">
-
-                    <!-- CCTV LIVE TAG -->
-                    <div class="absolute m-4 px-3 py-1 bg-red-600 text-white text-xs font-semibold rounded-full shadow-lg">
-                        LIVE
-                    </div>
-
-                    <!-- STREAM -->
-                    <iframe
-                        src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&mute=1&controls=0"
-                        class="w-full aspect-video rounded-t-3xl"
-                        allow="autoplay; encrypted-media">
-                    </iframe>
-
-                    <!-- TEXT -->
-                    <div class="p-6 space-y-2">
-                        <h3 class="text-xl font-bold text-gray-900">Salaryevo Park</h3>
-                        <p class="text-gray-600 text-sm">
-                            Salaryevo • 3 menit dari pusat kota
-                        </p>
-                    </div>
-                </div>
-
-
-                <!-- PROJECT CARD 2 -->
-                <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition">
-
-                    <!-- LIVE LABEL -->
-                    <div class="absolute m-4 px-3 py-1 bg-red-600 text-white text-xs font-semibold rounded-full shadow-lg">
-                        LIVE
-                    </div>
-
-                    <!-- STREAM -->
-                    <iframe
-                        src="https://www.youtube.com/embed/lX0O8_v6pG0?autoplay=1&mute=1&controls=0"
-                        class="w-full aspect-video rounded-t-3xl"
-                        allow="autoplay; encrypted-media">
-                    </iframe>
-
-                    <!-- TEXT -->
-                    <div class="p-6 space-y-2">
-                        <h3 class="text-xl font-bold text-gray-900">East Butovo</h3>
-                        <p class="text-gray-600 text-sm">
-                            Dryding Donskoy Boulevard • 15 menit dari pusat kota
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="service" class="relative py-24 bg-white overflow-hidden">
+    <section id="our-clients" class="relative py-24 bg-white overflow-hidden">
 
         <!-- Soft Gradient Background -->
         <div class="absolute inset-0 -z-10">
@@ -452,104 +315,201 @@
             <!-- TITLE -->
             <div class="text-center mb-14">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">
-                    Layanan <span class="text-orange-600">Kami</span>
+                    <span class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+                        Dipercaya
+                    </span>
+                     oleh Berbagai Brand
                 </h2>
                 <p class="text-gray-600 text-sm mt-4 max-w-2xl mx-auto">
-                    Berbagai layanan konstruksi profesional untuk mewujudkan proyek impian Anda dengan kualitas terbaik.
+                    Dipercaya oleh ribuan bisnis dari berbagai bidang dan skala usaha.
+                </p>
+            </div>
+
+            <!-- MARQUEE -->
+            <div class="relative space-y-8 overflow-hidden">
+
+                <!-- FADE -->
+                <div class="pointer-events-none absolute left-0 top-0 h-full w-12 sm:w-20 md:w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
+                <div class="pointer-events-none absolute right-0 top-0 h-full w-12 sm:w-20 md:w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
+
+                <!-- ROW 1 (LEFT) -->
+                <div class="overflow-hidden">
+                    <div class="flex min-w-full md:w-[200%] gap-20 animate-[marquee-left_35s_linear_infinite] md:animate-[marquee-left_35s_linear_infinite] hover:[animation-play-state:paused]">
+
+                        <!-- SET A -->
+                        <div class="flex shrink-0 items-center gap-16 md:gap-20">
+                            <!-- LOGO ITEM -->
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                        </div>
+
+                        <!-- SET B (DUPLIKASI) -->
+                        <div class="flex shrink-0 items-center gap-16 md:gap-20">
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ROW 2 (RIGHT) -->
+                <div class="overflow-hidden">
+                    <div class="flex min-w-full md:w-[200%] gap-20 animate-[marquee-right_40s_linear_infinite] md:animate-[marquee-right_35s_linear_infinite] hover:[animation-play-state:paused]">
+
+                        <div class="flex shrink-0 items-center gap-16 md:gap-20 sm:gap-10">
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                        </div>
+
+                        <div class="flex shrink-0 items-center gap-16 md:gap-20">
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="relative py-24 bg-white overflow-hidden">
+
+        <!-- Soft Gradient Background -->
+        <div class="absolute inset-0 -z-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-orange-100/40 blur-3xl rounded-full"></div>
+            <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-pink-100/40 blur-3xl rounded-full"></div>
+        </div>
+
+        <div class="w-full max-w-screen-xl mx-auto px-4 md:px-20">
+
+            <!-- TITLE -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">
+
+                    <span class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+                        Solusi Kreatif
+                    </span>
+                     untuk Brand Kamu
+                </h2>
+                <p class="text-gray-600 text-sm mt-4 max-w-2xl mx-auto">
+                    Solusi desain kreatif untuk memperkuat identitas dan citra brand Anda.
                 </p>
             </div>
 
             <!-- SERVICES GRID -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
-                <!-- Card 1 -->
-                <div class="group bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl p-10 shadow-lg
-                            hover:shadow-2xl hover:bg-white transition relative overflow-hidden">
-
-                    <!-- ICON WRAPPER -->
-                    <div class="bg-orange-500/10 p-5 rounded-2xl mb-6 w-fit">
-                        <i class="fas fa-pencil-ruler text-orange-600 text-4xl"></i>
+                <!-- SERVICE ITEM -->
+                <div class="group bg-white rounded-3xl shadow-sm hover:shadow-xl transition overflow-hidden">
+                    <div class="relative h-48 overflow-hidden">
+                        <img
+                            src="{{ asset('assets/website/services/logo-design.jpg') }}"
+                            alt="Desain Logo"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                        >
                     </div>
 
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Perencanaan Proyek</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Perencanaan matang untuk memastikan proyek berjalan tepat waktu, efisien, dan sesuai standar modern.
-                    </p>
+                    <div class="p-6 text-center space-y-4">
+                        <h3 class="text-lg font-bold text-gray-800">
+                            Desain Logo
+                        </h3>
+
+                        <a
+                            href="https://wa.me/628xxxxxxxxx?text=Halo%20saya%20ingin%20pesan%20jasa%20Desain%20Logo"
+                            target="_blank"
+                            class="inline-flex items-center justify-center px-6 py-2 text-sm font-semibold text-white rounded-full
+                                bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
+                                hover:opacity-90 transition">
+                            Pesan Sekarang
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="group bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl p-10 shadow-lg
-                            hover:shadow-2xl hover:bg-white transition relative overflow-hidden">
-
-                    <div class="bg-orange-500/10 p-5 rounded-2xl mb-6 w-fit">
-                        <i class="fas fa-building text-orange-600 text-4xl"></i>
+                <!-- SERVICE ITEM -->
+                <div class="group bg-white rounded-3xl shadow-sm hover:shadow-xl transition overflow-hidden">
+                    <div class="relative h-48 overflow-hidden">
+                        <img
+                            src="{{ asset('assets/website/services/packaging.jpg') }}"
+                            alt="Desain Packaging"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                        >
                     </div>
 
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Pembangunan Gedung</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Layanan pembangunan untuk rumah, gedung, ruko, warehouse, hingga proyek skala besar lainnya.
-                    </p>
+                    <div class="p-6 text-center space-y-4">
+                        <h3 class="text-lg font-bold text-gray-800">
+                            Desain Packaging
+                        </h3>
+
+                        <a
+                            href="https://wa.me/628xxxxxxxxx?text=Halo%20saya%20ingin%20pesan%20jasa%20Desain%20Packaging"
+                            target="_blank"
+                            class="inline-flex items-center justify-center px-6 py-2 text-sm font-semibold text-white rounded-full
+                                bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
+                                hover:opacity-90 transition">
+                            Pesan Sekarang
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="group bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl p-10 shadow-lg
-                            hover:shadow-2xl hover:bg-white transition relative overflow-hidden">
-
-                    <div class="bg-orange-500/10 p-5 rounded-2xl mb-6 w-fit">
-                        <i class="fas fa-tools text-orange-600 text-4xl"></i>
+                <!-- SERVICE ITEM -->
+                <div class="group bg-white rounded-3xl shadow-sm hover:shadow-xl transition overflow-hidden">
+                    <div class="relative h-48 overflow-hidden">
+                        <img
+                            src="{{ asset('assets/website/services/poster.jpg') }}"
+                            alt="Desain Poster"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                        >
                     </div>
 
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Renovasi & Perbaikan</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Renovasi total ataupun perbaikan kecil dengan hasil rapi, cepat, dan sesuai kebutuhan.
-                    </p>
-                </div>
+                    <div class="p-6 text-center space-y-4">
+                        <h3 class="text-lg font-bold text-gray-800">
+                            Desain Poster
+                        </h3>
 
-                <!-- Card 4 -->
-                <div class="group bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl p-10 shadow-lg
-                            hover:shadow-2xl hover:bg-white transition relative overflow-hidden">
-
-                    <div class="bg-orange-500/10 p-5 rounded-2xl mb-6 w-fit">
-                        <i class="fas fa-seedling text-orange-600 text-4xl"></i>
+                        <a
+                            href="https://wa.me/628xxxxxxxxx?text=Halo%20saya%20ingin%20pesan%20jasa%20Desain%20Poster"
+                            target="_blank"
+                            class="inline-flex items-center justify-center px-6 py-2 text-sm font-semibold text-white rounded-full
+                                bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
+                                hover:opacity-90 transition">
+                            Pesan Sekarang
+                        </a>
                     </div>
-
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Landscape & Infrastruktur</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Penataan lingkungan, jalan, taman, dan fasilitas umum dengan standar modern dan estetika tinggi.
-                    </p>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="group bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl p-10 shadow-lg
-                            hover:shadow-2xl hover:bg-white transition relative overflow-hidden">
-
-                    <div class="bg-orange-500/10 p-5 rounded-2xl mb-6 w-fit">
-                        <i class="fas fa-project-diagram text-orange-600 text-4xl"></i>
-                    </div>
-
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Manajemen Proyek</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Mengelola proyek secara profesional agar berjalan efisien, terukur, dan berkualitas tinggi.
-                    </p>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="group bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl p-10 shadow-lg
-                            hover:shadow-2xl hover:bg-white transition relative overflow-hidden">
-
-                    <div class="bg-orange-500/10 p-5 rounded-2xl mb-6 w-fit">
-                        <i class="fas fa-warehouse text-orange-600 text-4xl"></i>
-                    </div>
-
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Konstruksi Industrial</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Pembangunan pabrik, pergudangan, dan fasilitas industri sesuai standar keamanan & kualitas.
-                    </p>
                 </div>
 
             </div>
         </div>
     </section>
+
+
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="relative py-24 bg-white overflow-hidden">
@@ -565,7 +525,9 @@
             <!-- TITLE -->
             <div class="text-center mb-14">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">
-                    Hubungi <span class="text-orange-600">Kami</span>
+                    Siap
+                    <span class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">Wujudkan </span>
+                    Ide Kamu?
                 </h2>
                 <p class="text-gray-600 text-sm mt-4 max-w-2xl mx-auto">
                     Siap membantu Anda untuk konsultasi proyek, penawaran harga, atau pertanyaan lainnya.
@@ -582,7 +544,7 @@
                     <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg p-8">
                         <div class="flex items-start gap-5">
                             <div class="bg-orange-500/10 p-4 rounded-2xl">
-                                <i class="fas fa-phone text-orange-600 text-3xl"></i>
+                                <i class="fas fa-phone bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-3xl"></i>
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold text-gray-900">Telepon</h4>
@@ -595,7 +557,7 @@
                     <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg p-8">
                         <div class="flex items-start gap-5">
                             <div class="bg-orange-500/10 p-4 rounded-2xl">
-                                <i class="fas fa-envelope text-orange-600 text-3xl"></i>
+                                <i class="fas fa-envelope bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-3xl"></i>
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold text-gray-900">Email</h4>
@@ -608,7 +570,7 @@
                     <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg p-8">
                         <div class="flex items-start gap-5">
                             <div class="bg-orange-500/10 p-4 rounded-2xl">
-                                <i class="fas fa-map-marker-alt text-orange-600 text-3xl"></i>
+                                <i class="fas fa-map-marker-alt bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-3xl"></i>
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold text-gray-900">Alamat Kantor</h4>
@@ -625,33 +587,74 @@
                         <!-- Name -->
                         <div>
                             <label class="text-gray-700 text-sm font-semibold">Nama Lengkap</label>
-                            <input type="text" required
-                                class="mt-2 w-full px-5 py-3 rounded-xl border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition">
+                            <div class="mt-2 rounded-xl p-[2px] bg-gray-200
+                                        focus-within:bg-gradient-to-r
+                                        focus-within:from-orange-500
+                                        focus-within:via-pink-500
+                                        focus-within:to-purple-600
+                                        transition">
+                                <input
+                                    type="text"
+                                    required
+                                    class="w-full px-5 py-3 rounded-[10px]
+                                        bg-white
+                                        border border-transparent
+                                        outline-none
+                                        focus:ring-0">
+                            </div>
                         </div>
 
                         <!-- Email -->
                         <div>
                             <label class="text-gray-700 text-sm font-semibold">Email</label>
-                            <input type="email" required
-                                class="mt-2 w-full px-5 py-3 rounded-xl border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition">
+                            <div class="mt-2 rounded-xl p-[2px] bg-gray-200
+                                        focus-within:bg-gradient-to-r
+                                        focus-within:from-orange-500
+                                        focus-within:via-pink-500
+                                        focus-within:to-purple-600
+                                        transition">
+                                <input
+                                    type="email"
+                                    required
+                                    class="w-full px-5 py-3 rounded-[10px]
+                                        bg-white
+                                        border border-transparent
+                                        outline-none
+                                        focus:ring-0">
+                            </div>
                         </div>
 
                         <!-- Message -->
                         <div>
                             <label class="text-gray-700 text-sm font-semibold">Pesan / Pertanyaan</label>
-                            <textarea rows="4" required
-                                class="mt-2 w-full px-5 py-3 rounded-xl border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition"></textarea>
+                            <div class="mt-2 rounded-xl p-[2px] bg-gray-200
+                                        focus-within:bg-gradient-to-r
+                                        focus-within:from-orange-500
+                                        focus-within:via-pink-500
+                                        focus-within:to-purple-600
+                                        transition">
+                                <textarea
+                                    rows="4"
+                                    required
+                                    class="w-full px-5 py-3 rounded-[10px]
+                                        bg-white
+                                        border border-transparent
+                                        outline-none
+                                        resize-none
+                                        focus:ring-0"></textarea>
+                            </div>
                         </div>
 
                         <!-- Button -->
                         <button
-                            class="w-full bg-orange-600 hover:bg-orange-700 text-white py-3 rounded-xl font-semibold shadow-lg transition">
+                            class="w-full bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
+                                hover:opacity-90
+                                text-white py-3 rounded-xl font-semibold shadow-lg transition">
                             Kirim Pesan
                         </button>
 
                     </form>
                 </div>
-
             </div>
         </div>
     </section>
@@ -661,7 +664,50 @@
     <!-- FOOTER -->
     @include('website.components.footer')
     <script src="https://www.youtube.com/iframe_api"></script>
+    <!-- Include GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
+    <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const image = document.getElementById('scroll-image');
+        const container = document.getElementById('scroll-image-container');
+
+        // Animasi saat scroll
+        gsap.to(image, {
+            scale: 1.5, // Skala maksimal
+            ease: "power1.out",
+            scrollTrigger: {
+                trigger: container,
+                start: "top 80%",    // Mulai animasi ketika 80% dari top viewport
+                end: "bottom 20%",   // Selesai ketika 20% dari bottom viewport
+                scrub: 1,            // Smooth follow scroll
+                onUpdate: (self) => {
+                    // Optional: tambahkan efek parallax
+                    image.style.transform = `scale(${1 + (self.progress * 0.5)})`;
+                },
+                onEnterBack: () => {
+                    // Reset saat scroll ke atas
+                    gsap.to(image, { scale: 1, duration: 0.5 });
+                }
+            }
+        });
+
+        // Animasi container juga
+        gsap.to(container, {
+            scale: 1.2,
+            ease: "power1.out",
+            scrollTrigger: {
+                trigger: container,
+                start: "top 80%",
+                end: "bottom 20%",
+                scrub: 1
+            }
+        });
+    });
+    </script>
 
 </body>
 </html>
