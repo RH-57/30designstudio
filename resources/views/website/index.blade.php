@@ -445,27 +445,43 @@
                         </div>
 
                         <!-- CONTENT -->
-                        <div class="relative z-10 h-full flex flex-col justify-end p-6 text-center">
+                        <div class="relative z-10 h-full flex flex-col justify-end items-center p-6 text-center">
 
                             <h3 class="text-xl font-extrabold text-white mb-4
                                     drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
                                 Desain Logo
                             </h3>
 
-                            <a
-                                href="https://wa.me/628xxxxxxxxx?text=Halo%20saya%20ingin%20pesan%20jasa%20Desain%20Logo"
-                                target="_blank"
-                                class="inline-flex justify-center items-center
-                                    px-6 py-2 mx-auto text-sm font-semibold text-white rounded-full
+                           <a href="https://wa.me/628xxxxxxxxx"
+                            target="_blank"
+                            class="group relative inline-flex items-center justify-center
+                                    w-40 h-11
+                                    rounded-full
                                     bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
-                                    shadow-lg shadow-black/40
-                                    hover:opacity-90 transition">
-                                Pesan Sekarang
-                            </a>
+                                    text-white text-sm font-semibold
+                                    shadow-md shadow-black/25
+                                    overflow-hidden
+                                    transition
+                                    active:scale-95">
 
+                                <!-- TEXT -->
+                                <span class="absolute inset-0 flex items-center justify-center
+                                            transition-all duration-300
+                                            group-hover:opacity-0 group-hover:scale-75">
+                                    Pesan Sekarang
+                                </span>
+
+                                <!-- WHATSAPP ICON -->
+                                <span class="absolute inset-0 flex items-center justify-center
+                                            opacity-0 scale-75
+                                            transition-all duration-300
+                                            group-hover:opacity-100 group-hover:scale-100">
+                                    <i class="fab fa-whatsapp text-2xl"></i>
+                                </span>
+
+                            </a>
                         </div>
                     </div>
-
                 </div>
 
                 <!-- SERVICE ITEM -->
@@ -486,24 +502,41 @@
                         </div>
 
                         <!-- CONTENT -->
-                        <div class="relative z-10 h-full flex flex-col justify-end p-6 text-center">
+                        <div class="relative z-10 h-full flex flex-col justify-end items-center p-6 text-center">
 
                             <h3 class="text-xl font-extrabold text-white mb-4
                                     drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
                                 Desain Packaging
                             </h3>
 
-                            <a
-                                href="https://wa.me/628xxxxxxxxx?text=Halo%20saya%20ingin%20pesan%20jasa%20Desain%20Logo"
-                                target="_blank"
-                                class="inline-flex justify-center items-center
-                                    px-6 py-2 mx-auto text-sm font-semibold text-white rounded-full
+                            <a href="https://wa.me/628xxxxxxxxx"
+                            target="_blank"
+                            class="group relative inline-flex items-center justify-center
+                                    w-40 h-11
+                                    rounded-full
                                     bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
-                                    shadow-lg shadow-black/40
-                                    hover:opacity-90 transition">
-                                Pesan Sekarang
-                            </a>
+                                    text-white text-sm font-semibold
+                                    shadow-md shadow-black/25
+                                    overflow-hidden
+                                    transition
+                                    active:scale-95">
 
+                                <!-- TEXT -->
+                                <span class="absolute inset-0 flex items-center justify-center
+                                            transition-all duration-300
+                                            group-hover:opacity-0 group-hover:scale-75">
+                                    Pesan Sekarang
+                                </span>
+
+                                <!-- WHATSAPP ICON -->
+                                <span class="absolute inset-0 flex items-center justify-center
+                                            opacity-0 scale-75
+                                            transition-all duration-300
+                                            group-hover:opacity-100 group-hover:scale-100">
+                                    <i class="fab fa-whatsapp text-2xl"></i>
+                                </span>
+
+                            </a>
                         </div>
                     </div>
 
@@ -527,22 +560,40 @@
                         </div>
 
                         <!-- CONTENT -->
-                        <div class="relative z-10 h-full flex flex-col justify-end p-6 text-center">
+                        <div class="relative z-10 h-full flex flex-col justify-end items-center p-6 text-center">
 
                             <h3 class="text-xl font-extrabold text-white mb-4
                                     drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
                                 Desain Grafis
                             </h3>
 
-                            <a
-                                href="https://wa.me/628xxxxxxxxx?text=Halo%20saya%20ingin%20pesan%20jasa%20Desain%20Logo"
-                                target="_blank"
-                                class="inline-flex justify-center items-center
-                                    px-6 py-2 mx-auto text-sm font-semibold text-white rounded-full
+                            <a href="https://wa.me/628xxxxxxxxx"
+                            target="_blank"
+                            class="group relative inline-flex items-center justify-center
+                                    w-40 h-11
+                                    rounded-full
                                     bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
-                                    shadow-lg shadow-black/40
-                                    hover:opacity-90 transition">
-                                Pesan Sekarang
+                                    text-white text-sm font-semibold
+                                    shadow-md shadow-black/25
+                                    overflow-hidden
+                                    transition
+                                    active:scale-95">
+
+                                <!-- TEXT -->
+                                <span class="absolute inset-0 flex items-center justify-center
+                                            transition-all duration-300
+                                            group-hover:opacity-0 group-hover:scale-75">
+                                    Pesan Sekarang
+                                </span>
+
+                                <!-- WHATSAPP ICON -->
+                                <span class="absolute inset-0 flex items-center justify-center
+                                            opacity-0 scale-75
+                                            transition-all duration-300
+                                            group-hover:opacity-100 group-hover:scale-100">
+                                    <i class="fab fa-whatsapp text-2xl"></i>
+                                </span>
+
                             </a>
 
                         </div>
