@@ -62,7 +62,7 @@
                 <ul class="space-y-3 text-sm text-gray-600">
                     <li>Jakarta, Indonesia</li>
                     <li>+62 812-3456-7890</li>
-                    <li>hello@30design.studio</li>
+                    <li>info@30design.studio</li>
                 </ul>
 
                 <!-- CTA WHATSAPP -->
