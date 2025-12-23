@@ -127,3 +127,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Preview Image Portfolio
+const modal = document.getElementById('portfolioModal');
+const modalImage = document.getElementById('portfolioModalImage');
+
+window.openPortfolio = function (imageUrl) {
+    modalImage.src = imageUrl;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.classList.add('overflow-hidden');
+};
+
+window.closePortfolio = function () {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    modalImage.src = '';
+    document.body.classList.remove('overflow-hidden');
+};
+
+// Close on background click
+modal.addEventListener('click', function (e) {
+    if (e.target === modal) window.closePortfolio();
+});
+
+// Close on ESC
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') window.closePortfolio();
+});

@@ -334,10 +334,10 @@
 
                 <!-- ROW 1 (LEFT) -->
                 <div class="overflow-hidden">
-                    <div class="flex min-w-full md:w-[200%] gap-20 animate-[marquee-left_35s_linear_infinite] md:animate-[marquee-left_35s_linear_infinite] hover:[animation-play-state:paused]">
+                    <div class="flex min-w-full md:w-[200%] gap-16 animate-[marquee-left_35s_linear_infinite] md:animate-[marquee-left_35s_linear_infinite] hover:[animation-play-state:paused]">
 
                         <!-- SET A -->
-                        <div class="flex shrink-0 items-center gap-16 md:gap-20">
+                        <div class="flex shrink-0 items-center gap-14 md:gap-16">
                             <!-- LOGO ITEM -->
                             <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
                             <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
@@ -349,7 +349,7 @@
                         </div>
 
                         <!-- SET B (DUPLIKASI) -->
-                        <div class="flex shrink-0 items-center gap-16 md:gap-20">
+                        <div class="flex shrink-0 items-center gap-14 md:gap-16">
                             <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
                             <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
                             <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
@@ -605,6 +605,133 @@
         </div>
     </section>
 
+    <section id="portfolio" class="relative py-24 bg-white overflow-hidden">
+        <div class="absolute inset-0 -z-10">
+            <div class="absolute top-10 left-10 w-96 h-96 bg-orange-200/30 blur-3xl rounded-full"></div>
+            <div class="absolute bottom-0 right-10 w-[500px] h-[500px] bg-yellow-200/30 blur-3xl rounded-full"></div>
+        </div>
+
+        <div class="w-full max-w-screen-xl mx-auto px-4 md:px-20">
+
+            <!-- TITLE -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">
+                    <span class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+                        Karya Terbaik
+                    </span>
+                     Kami
+                </h2>
+                <p class="text-gray-600 text-sm mt-4 max-w-2xl mx-auto">
+                    Beberapa project yang telah kami kerjakan untuk berbagai brand dan kebutuhan bisnis.
+                </p>
+            </div>
+
+            <!-- PORTFOLIO GRID -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+                <!-- ITEM -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
+                    onclick="openPortfolio('{{ asset('assets/website/services/service-1.webp') }}')">
+
+                    <img
+                        src="{{ asset('assets/website/services/service-1.webp') }}"
+                        alt="Kopi Nusantara"
+                        class="w-full aspect-square object-cover group-hover:scale-105 transition duration-700"
+                    />
+
+
+                    <!-- OVERLAY -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+
+                    <!-- TEXT -->
+                    <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+                        <h3 class="text-xl font-extrabold text-white
+                                drop-shadow-[0_3px_8px_rgba(0,0,0,0.9)]">
+                            Kopi Nusantara
+                        </h3>
+                        <p class="text-sm text-white/90 mt-1
+                                drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+                            Desain Packaging
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- ITEM -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
+                    onclick="openPortfolio('{{ asset('assets/website/services/service-2.webp') }}')">
+
+                    <img src="{{ asset('assets/website/services/service-2.webp') }}"
+                        alt="Kopi Nusantara"
+                        class="w-full aspect-square object-cover group-hover:scale-105 transition duration-700">
+
+                    <!-- OVERLAY -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+
+                    <!-- TEXT -->
+                    <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+                        <h3 class="text-xl font-extrabold text-white
+                                drop-shadow-[0_3px_8px_rgba(0,0,0,0.9)]">
+                            Kopi Nusantara
+                        </h3>
+                        <p class="text-sm text-white/90 mt-1
+                                drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+                            Desain Packaging
+                        </p>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
+                    onclick="openPortfolio('{{ asset('assets/website/services/service-2.webp') }}')">
+
+                    <img src="{{ asset('assets/website/services/service-2.webp') }}"
+                        alt="Kopi Nusantara"
+                        class="w-full aspect-square object-cover group-hover:scale-105 transition duration-700">
+
+                    <!-- OVERLAY -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+
+                    <!-- TEXT -->
+                    <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+                        <h3 class="text-xl font-extrabold text-white
+                                drop-shadow-[0_3px_8px_rgba(0,0,0,0.9)]">
+                            Kopi Nusantara
+                        </h3>
+                        <p class="text-sm text-white/90 mt-1
+                                drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+                            Desain Packaging
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- ITEM -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
+                    onclick="openPortfolio('{{ asset('assets/website/services/service-3.webp') }}')">
+
+                    <img src="{{ asset('assets/website/services/service-3.webp') }}"
+                        alt="Kopi Nusantara"
+                        class="w-full aspect-square object-cover group-hover:scale-105 transition duration-700">
+
+                    <!-- OVERLAY -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+
+                    <!-- TEXT -->
+                    <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+                        <h3 class="text-xl font-extrabold text-white
+                                drop-shadow-[0_3px_8px_rgba(0,0,0,0.9)]">
+                            Kopi Nusantara
+                        </h3>
+                        <p class="text-sm text-white/90 mt-1
+                                drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+                            Desain Packaging
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CONTACT SECTION -->
     <section id="contact" class="relative py-24 bg-white overflow-hidden">
 
@@ -635,7 +762,7 @@
                 <div class="space-y-8">
 
                     <!-- CARD -->
-                    <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg p-8">
+                    <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg p-3">
                         <div class="flex items-start gap-5">
                             <div class="bg-orange-500/10 p-4 rounded-2xl">
                                 <i class="fas fa-phone bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-3xl"></i>
@@ -648,7 +775,7 @@
                     </div>
 
                     <!-- CARD -->
-                    <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg p-8">
+                    <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg p-3">
                         <div class="flex items-start gap-5">
                             <div class="bg-orange-500/10 p-4 rounded-2xl">
                                 <i class="fas fa-envelope bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-3xl"></i>
@@ -661,7 +788,7 @@
                     </div>
 
                     <!-- CARD -->
-                    <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg p-8">
+                    <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg p-3">
                         <div class="flex items-start gap-5">
                             <div class="bg-orange-500/10 p-4 rounded-2xl">
                                 <i class="fas fa-map-marker-alt bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-3xl"></i>
@@ -675,7 +802,7 @@
                 </div>
 
                 <!-- RIGHT FORM -->
-                <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg p-10">
+                <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg p-5">
                     <form action="" method="POST" class="space-y-6">
 
                         <!-- Name -->
@@ -753,6 +880,22 @@
         </div>
     </section>
 
+    <!-- PORTFOLIO PREVIEW MODAL -->
+    <div id="portfolioModal"
+        class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/80 backdrop-blur-md px-4">
+
+        <!-- CLOSE BUTTON -->
+        <button onclick="closePortfolio()"
+                class="absolute top-6 right-6 text-white text-3xl hover:scale-110 transition">
+            &times;
+        </button>
+
+        <!-- IMAGE -->
+        <img id="portfolioModalImage"
+            src=""
+            alt="Preview"
+            class="max-w-full max-h-[90vh] rounded-2xl shadow-2xl">
+    </div>
 
 
     <!-- FOOTER -->

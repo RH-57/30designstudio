@@ -24,7 +24,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#about" class="transition bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
+                        <a href="/about-us" class="transition bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
                                             bg-clip-text hover:text-transparent">
                             Tentang Kami
                         </a>
@@ -83,7 +83,13 @@
                     </li>
 
                     <li>
-                        <a href="#contact" class="transition bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
+                        <a href="/portfolio" class="transition bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
+                                                bg-clip-text hover:text-transparent">
+                            Portofolio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/contact-us" class="transition bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
                                                 bg-clip-text hover:text-transparent">
                             Kontak
                         </a>
@@ -146,6 +152,7 @@
                     <a href="#social-media" class="block py-2 text-sm text-gray-600">Konten Media Sosial</a>
                 </div>
 
+                <a href="#contact" class="py-2 text-gray-700">Portofolio</a>
                 <a href="#contact" class="py-2 text-gray-700">Kontak</a>
                 <a href="#contact"
                 class="relative mt-3 inline-flex items-center justify-center w-full py-2.5 rounded-xl font-semibold text-white
