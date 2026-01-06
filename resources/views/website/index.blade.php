@@ -3,31 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jasa Desain Kreatif & Packaging - 30design.studio</title>
 
-    <meta name="description" content="30Design Studio melayani jasa desain kreatif mulai dari desain logo, desain grafis, packaging produk, hingga editing video. Dari konsep, desain, sampai siap digunakan untuk kebutuhan brand dan bisnis Anda.">
-    <meta name="keywords" content="jasa desain grafis, jasa desain logo, jasa desain packaging, jasa desain kreatif, jasa desain brand, editing video, desain kemasan produk">
+    <title>Jasa Desain & Cetak Packaging Terbaik - 30Design Studio</title>
+
+    <meta name="description" content="30Design Studio menyediakan jasa desain dan cetak packaging profesional untuk berbagai produk. Mulai dari konsep desain kemasan, visual branding, hingga proses cetak berkualitas tinggi agar produk Anda tampil menarik dan siap bersaing di pasaran.">
+
+    <meta name="keywords" content="jasa desain packaging, jasa cetak packaging, jasa desain kemasan produk, desain kemasan profesional, cetak kemasan produk, jasa desain dan cetak packaging, studio desain packaging">
+
     <meta name="robots" content="index, follow">
 
-    <meta property="og:title" content="Jasa Desain Kreatif & Packaging | 30Design Studio">
-    <meta property="og:description" content="Layanan desain logo, desain grafis, packaging produk, dan editing video. Solusi kreatif untuk brand dan bisnis Anda.">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Jasa Desain & Cetak Packaging Profesional | 30Design Studio">
+    <meta property="og:description" content="Layanan desain dan cetak packaging berkualitas untuk produk UMKM hingga brand profesional. Desain menarik, cetak rapi, dan siap jual.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:image" content="{{ asset('assets/website/img/og-image.jpg') }}">
     <meta property="og:site_name" content="30Design Studio">
 
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Jasa Desain Kreatif & Packaging | 30Design Studio">
-    <meta name="twitter:description" content="Desain logo, grafis, packaging produk, dan video untuk kebutuhan brand dan bisnis.">
+    <meta name="twitter:title" content="Jasa Desain & Cetak Packaging | 30Design Studio">
+    <meta name="twitter:description" content="Desain kemasan produk dan cetak packaging profesional untuk meningkatkan nilai dan daya jual brand Anda.">
     <meta name="twitter:image" content="{{ asset('assets/website/img/og-image.jpg') }}">
 
     <link rel="canonical" href="{{ url()->current() }}">
 
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     </noscript>
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 <body>
     <!-- PAGE LOADER -->
@@ -49,18 +57,18 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
                 <!-- LEFT TEXT -->
-                <div class="space-y-6">
+                <div class="space-y-6 text-center md:text-left">
 
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
-                        Solusi <span class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">Desain </span>untuk Berbagai Kebutuhan Brand Anda
+                        Jasa <span class="bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">Desain </span> & <span class="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">Cetak</span> Packaging Terbaik.
                     </h1>
 
-                    <p class="text-sm md:text-lg text-gray-600 leading-relaxed">
+                    <p class="text-sm md:text-lg text-gray-800 leading-relaxed">
                         Layanan lengkap desain packaging hingga proses cetak berkualitas tinggi.
                         Membantu produk Anda tampil lebih menarik, dipercaya, dan siap bersaing di pasar.
                     </p>
 
-                    <div class="flex gap-4">
+                    <div class="flex gap-4 justify-center md:justify-start">
                         <a href="#contact" class="relative inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white rounded-xl
                         bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
                         shadow-[0_8px_20px_rgba(236,72,153,0.45)]
@@ -110,7 +118,7 @@
     <!-- STATS SECTION -->
     <section id="stats" class="relative py-16 bg-white overflow-hidden">
 
-        <!-- Soft Gradient -->
+        <!-- Soft Gradient Background -->
         <div class="absolute inset-0 -z-10">
             <div class="absolute -top-10 left-10 w-96 h-96 bg-orange-200/30 blur-3xl rounded-full"></div>
             <div class="absolute bottom-0 right-20 w-[500px] h-[500px] bg-yellow-200/40 blur-3xl rounded-full"></div>
@@ -119,62 +127,89 @@
         <div class="w-full max-w-screen-xl mx-auto px-6 md:px-20">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-                <!-- CARD 1 -->
-                <div class="flex items-center gap-5 bg-white/70 backdrop-blur-xl border border-orange-100
-                            rounded-3xl shadow-lg py-6 px-7 transition hover:shadow-xl">
+                <!-- CARD -->
+                <div class="relative overflow-hidden rounded-3xl shadow-lg group">
 
-                    <!-- icon box -->
-                    <div class="bg-orange-500/10 p-4 rounded-2xl">
-                        <i class="fas fa-check text-3xl bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent"></i>
-                    </div>
+                    <!-- BACKGROUND IMAGE -->
+                    <img src="{{ asset('assets/website/img/about.png') }}"
+                        class="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-110 transition duration-700"
+                        alt="Packaging Design">
 
-                    <!-- number -->
-                    <div>
-                        <div class="flex items-end gap-1">
-                            <span class="text-4xl font-extrabold text-gray-900 counter" data-target="250">0</span>
-                            <span class="text-orange-600 text-2xl font-bold">+</span>
+                    <!-- OVERLAY -->
+                    <div class="absolute inset-0 bg-black/40"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+
+                    <!-- CONTENT -->
+                    <div class="relative z-10 flex items-center gap-5 py-6 px-7 backdrop-blur-sm">
+
+                        <!-- ICON -->
+                        <div class="bg-white/20 p-4 rounded-2xl">
+                            <i class="fas fa-check text-3xl bg-orange-400 bg-clip-text text-transparent"></i>
                         </div>
-                        <p class="text-gray-600 text-sm">Project Completed</p>
+
+                        <!-- TEXT -->
+                        <div>
+                            <div class="flex items-end gap-1">
+                                <span class="text-4xl font-extrabold text-white counter" data-target="250">0</span>
+                                <span class="text-orange-400 text-2xl font-bold">+</span>
+                            </div>
+                            <p class="text-white/80 text-sm">Project Completed</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- CARD 2 -->
-                <div class="flex items-center gap-5 bg-white/70 backdrop-blur-xl border border-orange-100
-                            rounded-3xl shadow-lg py-6 px-7 transition hover:shadow-xl">
+                <div class="relative overflow-hidden rounded-3xl shadow-lg group">
+                    <img src="{{ asset('assets/website/img/about.png') }}"
+                        class="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-110 transition duration-700"
+                        alt="Happy Client">
 
-                    <div class="bg-orange-500/10 p-4 rounded-2xl">
-                        <i class="fas fa-award text-3xl bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent"></i>
-                    </div>
+                    <div class="absolute inset-0 bg-black/40"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
 
-                    <div>
-                        <div class="flex items-end gap-1">
-                            <span class="text-4xl font-extrabold text-gray-900 counter" data-target="150">0</span>
-                            <span class="text-orange-600 text-2xl font-bold">+</span>
+                    <div class="relative z-10 flex items-center gap-5 py-6 px-7 backdrop-blur-sm">
+                        <div class="bg-white/20 p-4 rounded-2xl">
+                            <i class="fas fa-award text-3xl bg-gradient-to-r from-orange-400 via-pink-400 to-purple-500 bg-clip-text text-transparent"></i>
                         </div>
-                        <p class="text-gray-600 text-sm">Happy Client</p>
+
+                        <div>
+                            <div class="flex items-end gap-1">
+                                <span class="text-4xl font-extrabold text-white counter" data-target="150">0</span>
+                                <span class="text-orange-400 text-2xl font-bold">+</span>
+                            </div>
+                            <p class="text-white/80 text-sm">Happy Client</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- CARD 3 -->
-                <div class="flex items-center gap-5 bg-white/70 backdrop-blur-xl border border-orange-100
-                            rounded-3xl shadow-lg py-6 px-7 transition hover:shadow-xl">
+                <div class="relative overflow-hidden rounded-3xl shadow-lg group">
+                    <img src="{{ asset('assets/website/img/about.png') }}"
+                        class="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-110 transition duration-700"
+                        alt="Experience">
 
-                    <div class="bg-orange-500/10 p-4 rounded-2xl">
-                        <i class="fas fa-clock text-3xl bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent"></i>
-                    </div>
+                    <div class="absolute inset-0 bg-black/40"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
 
-                    <div>
-                        <div class="flex items-end gap-1">
-                            <span class="text-4xl font-extrabold text-gray-900 counter" data-target="11">0</span>
-                            <span class="text-orange-600 text-2xl font-bold">k</span>
+                    <div class="relative z-10 flex items-center gap-5 py-6 px-7 backdrop-blur-sm">
+                        <div class="bg-white/20 p-4 rounded-2xl">
+                            <i class="fas fa-clock text-3xl bg-gradient-to-r from-orange-400 via-pink-400 to-purple-500 bg-clip-text text-transparent"></i>
                         </div>
-                        <p class="text-gray-600 text-sm">Hours Experience</p>
+
+                        <div>
+                            <div class="flex items-end gap-1">
+                                <span class="text-4xl font-extrabold text-white counter" data-target="11">0</span>
+                                <span class="text-orange-400 text-2xl font-bold">k</span>
+                            </div>
+                            <p class="text-white/80 text-sm">Hours Experience</p>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </div>
     </section>
+
 
 
 
@@ -425,19 +460,21 @@
             </div>
 
             <!-- SERVICES GRID -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
+                @foreach($services as $service)
                 <!-- SERVICE ITEM -->
-                <div class="group bg-white rounded-3xl shadow-sm hover:shadow-xl transition overflow-hidden">
+                <div class="group bg-white rounded-xl shadow-sm hover:shadow-xl transition overflow-hidden">
                     <div class="group relative h-80 rounded-3xl overflow-hidden shadow-lg">
 
                         <!-- IMAGE -->
                         <img
-                            src="{{ asset('assets/website/services/service-1.webp') }}"
-                            alt="Desain Logo"
+                            src="{{ asset('storage/' . $service->hero_image) }}"
+                            alt="{{ $service->name }}"
                             class="absolute inset-0 w-full h-full object-cover
                                 group-hover:scale-105 transition duration-700"
-                        >
+                        />
+
 
                         <!-- DARK OVERLAY -->
                         <div class="absolute inset-0 bg-gradient-to-t
@@ -449,14 +486,14 @@
 
                             <h3 class="text-xl font-extrabold text-white mb-4
                                     drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
-                                Desain Logo
+                                {{$service->name}}
                             </h3>
 
                            <a href="https://wa.me/628xxxxxxxxx"
                             target="_blank"
                             class="group relative inline-flex items-center justify-center
                                     w-40 h-11
-                                    rounded-full
+                                    rounded-xl
                                     bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
                                     text-white text-sm font-semibold
                                     shadow-md shadow-black/25
@@ -483,124 +520,7 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- SERVICE ITEM -->
-                <div class="group bg-white rounded-3xl shadow-sm hover:shadow-xl transition overflow-hidden">
-                    <div class="group relative h-80 rounded-3xl overflow-hidden shadow-lg">
-
-                        <!-- IMAGE -->
-                        <img
-                            src="{{ asset('assets/website/services/service-2.webp') }}"
-                            alt="Desain Logo"
-                            class="absolute inset-0 w-full h-full object-cover
-                                group-hover:scale-105 transition duration-700"
-                        >
-
-                        <!-- DARK OVERLAY -->
-                        <div class="absolute inset-0 bg-gradient-to-t
-                                    from-black/70 via-black/30 to-transparent">
-                        </div>
-
-                        <!-- CONTENT -->
-                        <div class="relative z-10 h-full flex flex-col justify-end items-center p-6 text-center">
-
-                            <h3 class="text-xl font-extrabold text-white mb-4
-                                    drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
-                                Desain Packaging
-                            </h3>
-
-                            <a href="https://wa.me/628xxxxxxxxx"
-                            target="_blank"
-                            class="group relative inline-flex items-center justify-center
-                                    w-40 h-11
-                                    rounded-full
-                                    bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
-                                    text-white text-sm font-semibold
-                                    shadow-md shadow-black/25
-                                    overflow-hidden
-                                    transition
-                                    active:scale-95">
-
-                                <!-- TEXT -->
-                                <span class="absolute inset-0 flex items-center justify-center
-                                            transition-all duration-300
-                                            group-hover:opacity-0 group-hover:scale-75">
-                                    Pesan Sekarang
-                                </span>
-
-                                <!-- WHATSAPP ICON -->
-                                <span class="absolute inset-0 flex items-center justify-center
-                                            opacity-0 scale-75
-                                            transition-all duration-300
-                                            group-hover:opacity-100 group-hover:scale-100">
-                                    <i class="fab fa-whatsapp text-2xl"></i>
-                                </span>
-
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- SERVICE ITEM -->
-                <div class="group bg-white rounded-3xl shadow-sm hover:shadow-xl transition overflow-hidden">
-                    <div class="group relative h-80 rounded-3xl overflow-hidden shadow-lg">
-
-                        <!-- IMAGE -->
-                        <img
-                            src="{{ asset('assets/website/services/service-3.webp') }}"
-                            alt="Desain Logo"
-                            class="absolute inset-0 w-full h-full object-cover
-                                group-hover:scale-105 transition duration-700"
-                        >
-
-                        <!-- DARK OVERLAY -->
-                        <div class="absolute inset-0 bg-gradient-to-t
-                                    from-black/70 via-black/30 to-transparent">
-                        </div>
-
-                        <!-- CONTENT -->
-                        <div class="relative z-10 h-full flex flex-col justify-end items-center p-6 text-center">
-
-                            <h3 class="text-xl font-extrabold text-white mb-4
-                                    drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
-                                Desain Grafis
-                            </h3>
-
-                            <a href="https://wa.me/628xxxxxxxxx"
-                            target="_blank"
-                            class="group relative inline-flex items-center justify-center
-                                    w-40 h-11
-                                    rounded-full
-                                    bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
-                                    text-white text-sm font-semibold
-                                    shadow-md shadow-black/25
-                                    overflow-hidden
-                                    transition
-                                    active:scale-95">
-
-                                <!-- TEXT -->
-                                <span class="absolute inset-0 flex items-center justify-center
-                                            transition-all duration-300
-                                            group-hover:opacity-0 group-hover:scale-75">
-                                    Pesan Sekarang
-                                </span>
-
-                                <!-- WHATSAPP ICON -->
-                                <span class="absolute inset-0 flex items-center justify-center
-                                            opacity-0 scale-75
-                                            transition-all duration-300
-                                            group-hover:opacity-100 group-hover:scale-100">
-                                    <i class="fab fa-whatsapp text-2xl"></i>
-                                </span>
-
-                            </a>
-
-                        </div>
-                    </div>
-
-                </div>
-
+                @endforeach
             </div>
         </div>
     </section>
@@ -627,10 +547,10 @@
             </div>
 
             <!-- PORTFOLIO GRID -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
 
                 <!-- ITEM -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
+                <div class="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
                     onclick="openPortfolio('{{ asset('assets/website/services/service-1.webp') }}')">
 
                     <img
@@ -658,7 +578,7 @@
 
 
                 <!-- ITEM -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
+                <div class="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
                     onclick="openPortfolio('{{ asset('assets/website/services/service-2.webp') }}')">
 
                     <img src="{{ asset('assets/website/services/service-2.webp') }}"
@@ -681,7 +601,7 @@
                     </div>
                 </div>
 
-                <div class="group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
+                <div class="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
                     onclick="openPortfolio('{{ asset('assets/website/services/service-2.webp') }}')">
 
                     <img src="{{ asset('assets/website/services/service-2.webp') }}"
@@ -706,7 +626,7 @@
 
 
                 <!-- ITEM -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
+                <div class="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
                     onclick="openPortfolio('{{ asset('assets/website/services/service-3.webp') }}')">
 
                     <img src="{{ asset('assets/website/services/service-3.webp') }}"

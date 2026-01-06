@@ -1,0 +1,118 @@
+.brand-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.brand-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.brand-logo {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-logo img {
+    max-height: 70px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.brand-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 0;
+}
+
+/* Action Buttons */
+.brand-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 6px;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.brand-card:hover .brand-actions {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.brand-actions form {
+    margin: 0;
+}
+
+
+/* Wrapper */
+.social-icon-picker {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+    gap: 14px;
+    margin-top: 6px;
+}
+
+/* Button */
+.social-icon-option {
+    height: 64px;
+    border-radius: 16px;
+    border: 1px solid #e4e7ec;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: #6c757d;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+/* Hover */
+.social-icon-option:hover {
+    transform: translateY(-3px);
+    color: #0d6efd;
+    border-color: #cfe2ff;
+    box-shadow: 0 10px 25px rgba(13,110,253,0.15);
+}
+
+/* Active / Selected */
+.social-icon-option.active {
+    color: #0d6efd;
+    border-color: #0d6efd;
+    background: #f0f6ff;
+    box-shadow: 0 0 0 4px rgba(13,110,253,0.15);
+}
+
+/* Smooth icon animation */
+.social-icon-option i {
+    transition: transform 0.25s ease;
+}
+
+.social-icon-option:hover i {
+    transform: scale(1.15);
+}
+
+/* Optional brand colors on hover */
+.social-icon-option:hover .bi-instagram {
+    color: #e1306c;
+}
+.social-icon-option:hover .bi-facebook {
+    color: #1877f2;
+}
+.social-icon-option:hover .bi-tiktok {
+    color: #000;
+}
+.social-icon-option:hover .bi-youtube {
+    color: #ff0000;
+}

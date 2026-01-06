@@ -14,34 +14,47 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
 
             <!-- BRAND -->
-            <div class="space-y-4">
-                <div class="flex items-center gap-3">
-                    <div class="h-11 w-11 rounded-xl
+            <div class="space-y-5">
+
+                <!-- BRAND -->
+                <a href="/" class="flex items-center gap-1">
+                    <div class="h-8 w-8 rounded-md bg-orange-600 flex items-center justify-center text-white font-bold">30</div>
+                    <span class="hidden lg:inline-block font-semibold
                                 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
-                                flex items-center justify-center
-                                text-white font-extrabold tracking-wide">
-                        30D
-                    </div>
-                    <span class="font-extrabold text-gray-900 text-lg">
-                        30Design.Studio
+                                bg-clip-text text-transparent">
+                        designstudio
                     </span>
+                </a>
+
+                <!-- DESKRIPSI -->
+                <p class="text-gray-800 text-sm leading-relaxed">
+                    Jasa desain packaging profesional dari konsep visual hingga siap cetak,
+                    membantu produk tampil menonjol dan siap bersaing di pasaran.
+                </p>
+
+                <!-- FOLLOW US -->
+                <div>
+                    <p class="text-sm font-semibold text-gray-900 mb-2">Follow Us</p>
+                    <div class="flex items-center gap-4 text-lg text-gray-500">
+                        @foreach($mediasocials as $medsos)
+                        <a href="{{$medsos->url}}" class="hover:text-orange-500 transition">
+                            <i class="fab {{$medsos->icon}}"></i>
+                        </a>
+                        @endforeach
+                    </div>
                 </div>
 
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    Studio desain kreatif yang membantu brand tampil lebih kuat,
-                    profesional, dan berkarakter melalui solusi visual yang strategis.
-                </p>
             </div>
+
 
             <!-- NAVIGASI -->
             <div>
                 <h3 class="text-gray-900 font-bold mb-4">Navigasi</h3>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#hero" class="hover:text-orange-500 transition">Beranda</a></li>
-                    <li><a href="#about" class="hover:text-orange-500 transition">Tentang Kami</a></li>
-                    <li><a href="#services" class="hover:text-orange-500 transition">Layanan</a></li>
-                    <li><a href="#our-clients" class="hover:text-orange-500 transition">Klien</a></li>
-                    <li><a href="#contact" class="hover:text-orange-500 transition">Kontak</a></li>
+                    <li><a href="{{route('home')}}" class="text-gray-800 hover:text-orange-500 transition">Beranda</a></li>
+                    <li><a href="{{route('about')}}" class="text-gray-800 hover:text-orange-500 transition">Tentang Kami</a></li>
+                    <li><a href="#our-clients" class="text-gray-800 hover:text-orange-500 transition">Portofolio</a></li>
+                    <li><a href="#contact" class="text-gray-800 hover:text-orange-500 transition">Kontak</a></li>
                 </ul>
             </div>
 
@@ -49,26 +62,25 @@
             <div>
                 <h3 class="text-gray-900 font-bold mb-4">Layanan Kami</h3>
                 <ul class="space-y-2 text-sm">
-                    <li class="hover:text-pink-500 transition">Desain Logo & Branding</li>
-                    <li class="hover:text-pink-500 transition">Desain Packaging Produk</li>
-                    <li class="hover:text-pink-500 transition">Desain Grafis & Konten</li>
-                    <li class="hover:text-pink-500 transition">Visual Digital & Media</li>
+                    @foreach($services as $service)
+                    <li><a href="" class="text-gray-800 hover:text-pink-500 transition">{{$service->name}}</a></li>
+                    @endforeach
                 </ul>
             </div>
 
             <!-- KONTAK -->
             <div>
                 <h3 class="text-gray-900 font-bold mb-4">Hubungi Kami</h3>
-                <ul class="space-y-3 text-sm text-gray-600">
-                    <li>Jakarta, Indonesia</li>
-                    <li>+62 812-3456-7890</li>
-                    <li>info@30design.studio</li>
+                <ul class="space-y-3 text-sm text-gray-800">
+                    <li>{{$contact->address}}</li>
+                    <li>+{{$contact->phone}}</li>
+                    <li>{{$contact->email}}</li>
                 </ul>
 
                 <!-- CTA WHATSAPP -->
                 <a href="https://wa.me/628xxxxxxxxx"
                    class="inline-flex items-center gap-2 mt-5 px-5 py-2.5 rounded-full
-                          bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
+                          bg-gradient-to-r from-orange-500 via-pink-500 to-purple-800
                           text-white text-sm font-semibold
                           shadow-lg hover:opacity-90 transition">
                     <i class="fab fa-whatsapp text-lg"></i>
@@ -84,12 +96,12 @@
                     text-sm text-gray-500 gap-3">
 
             <span>
-                © 2025 <strong class="text-gray-700">30Design.Studio</strong>. All Rights Reserved.
+                © 2026 <strong class="text-gray-700">30designstudio</strong>. All Rights Reserved.
             </span>
 
             <span>
                 Made by
-                <a href="https://liradigi.id" class="font-semibold bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
+                <a href="https://liradigi.id" class="font-semibold bg-gradient-to-r from-orange-500 via-pink-500 to-purple-800
                                   bg-clip-text text-transparent">
                     Liradigi
                 </a>

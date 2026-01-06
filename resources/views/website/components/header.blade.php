@@ -5,17 +5,17 @@
         <div class="px-4 md:px-6 py-3 flex items-center justify-between">
 
             <!-- LEFT: Logo -->
-            <a href="/" class="flex items-center gap-3">
-                <div class="h-8 w-8 rounded-md bg-orange-600 flex items-center justify-center text-white font-bold">PIK</div>
-                <span class="hidden md:inline-block font-semibold
+            <a href="/" class="flex items-center gap-1">
+                <div class="h-8 w-8 rounded-md bg-orange-600 flex items-center justify-center text-white font-bold">30</div>
+                <span class="hidden lg:inline-block font-semibold
                             bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
                             bg-clip-text text-transparent">
-                    30Design.Studio
+                    designstudio
                 </span>
             </a>
 
             <!-- CENTER: Menu (desktop only) -->
-            <nav class="hidden md:flex justify-center">
+            <nav class="hidden lg:flex justify-center">
                 <ul class="flex gap-8 items-center text-gray-800 font-medium">
                     <li>
                         <a href="/" class="transition bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
@@ -24,7 +24,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/about-us" class="transition bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
+                        <a href="{{route('about')}}" class="transition bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
                                             bg-clip-text hover:text-transparent">
                             Tentang Kami
                         </a>
@@ -54,30 +54,14 @@
                                 transition-all duration-200 z-50">
 
                             <ul class="py-2 text-sm text-gray-700">
+                                @foreach($services as $service)
                                 <li>
                                     <a href="#logo-design"
                                     class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">
-                                        Desain Logo
+                                        {{$service->name}}
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#packaging-design"
-                                    class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">
-                                        Desain Packaging
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#branding"
-                                    class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">
-                                        Branding & Identitas
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#social-media"
-                                    class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">
-                                        Konten Media Sosial
-                                    </a>
-                                </li>
+                                @endforeach
                             </ul>
                         </div>
                     </li>
@@ -89,7 +73,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/contact-us" class="transition bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
+                        <a href="{{route('contact')}}" class="transition bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
                                                 bg-clip-text hover:text-transparent">
                             Kontak
                         </a>
@@ -99,15 +83,15 @@
 
 
             <!-- RIGHT: Icons + CTA (desktop) -->
-            <div class="hidden md:flex items-center gap-3">
-                <a href="#contact"
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="https://wa.me/{{$contact->phone}}"
                 class="relative inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white rounded-xl
                 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
                 shadow-[0_8px_20px_rgba(236,72,153,0.45)]
                 transition-all duration-300
                 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(168,85,247,0.55)]
                 active:translate-y-0 active:shadow-[0_6px_14px_rgba(0,0,0,0.25)]
-                overflow-hidden group">
+                overflow-hidden group" target="_blank">
 
                     <!-- glossy layer -->
                     <span class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></span>
@@ -121,7 +105,7 @@
 
             <!-- MOBILE: Hamburger -->
             <button id="hamburger"
-                class="md:hidden inline-flex items-center justify-center p-2 rounded-md hover:bg-white/40 transition">
+                class="lg:hidden inline-flex items-center justify-center p-2 rounded-md hover:bg-white/40 transition">
                 <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
                     d="M4 7h16M4 12h16M4 17h16" />
@@ -131,7 +115,7 @@
         </div>
 
         <!-- MOBILE MENU -->
-        <div id="mobileMenu" class="hidden md:hidden px-4 pb-4">
+        <div id="mobileMenu" class="hidden lg:hidden px-4 pb-4">
             <div class="flex flex-col gap-2 bg-white/60 backdrop-blur-xl rounded-b-2xl border border-white/30 px-4 py-4 shadow-inner">
                 <a href="#about" class="py-2 border-b border-gray-100 text-gray-700">Beranda</a>
                 <a href="#about" class="py-2 border-b border-gray-100 text-gray-700">Tentang Kami</a>

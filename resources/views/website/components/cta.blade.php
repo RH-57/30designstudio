@@ -9,7 +9,7 @@
 
     <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
 
-        <p class="text-xs uppercase tracking-widest text-gray-500 mb-6">
+        <p class="text-xs uppercase tracking-widest text-gray-600 mb-6">
             Saatnya Melangkah
         </p>
 
@@ -20,7 +20,7 @@
             </span>
         </h2>
 
-        <p class="mt-8 text-gray-600 text-base leading-relaxed">
+        <p class="mt-8 text-gray-800 text-base leading-relaxed">
             Jika Anda merasa brand Anda memiliki cerita yang layak untuk diceritakan
             dengan visual yang tepat, kami siap menjadi bagian dari perjalanan tersebut.
             Mari mulai dengan percakapan sederhana.
@@ -30,14 +30,14 @@
         <div class="mt-12 flex flex-col sm:flex-row gap-6 justify-center">
 
             <a href="/contact"
-               class="inline-flex items-center justify-center px-8 py-4 rounded-full
+               class="inline-flex items-center justify-center px-8 py-4 rounded-xl
                bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
                text-white font-semibold shadow-lg hover:shadow-xl transition">
-                Mulai Cerita Bersama Kami
+                Konsultasi Gratis
             </a>
 
             <a href="/portfolio"
-               class="inline-flex items-center justify-center px-8 py-4 rounded-full
+               class="inline-flex items-center justify-center px-8 py-4 rounded-xl
                border border-gray-300 text-gray-700 font-medium
                hover:bg-gray-100 transition">
                 Lihat Karya Kami
