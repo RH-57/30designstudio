@@ -17,7 +17,7 @@ class PortfolioController extends Controller
 {
     public function index() {
         $portfolios = Cache::remember('portfolios', 3600, function () {
-            return Portfolio::get();
+            return Portfolio::with(['images', 'service'])->get();
         });
 
         return view('admin.portfolios.index', compact('portfolios'));
@@ -102,6 +102,7 @@ class PortfolioController extends Controller
         }
 
         Cache::forget('portfolios');
+        Cache::forget('homepage_portfolios_latest_8');
 
         return redirect()
             ->route('portfolios.index')
@@ -176,6 +177,7 @@ class PortfolioController extends Controller
         }
 
         Cache::forget('portfolios');
+        Cache::forget('homepage_portfolios_latest_8');
 
         return redirect()
             ->route('portfolios.index')
@@ -200,7 +202,9 @@ class PortfolioController extends Controller
         }
 
         $portfolio->delete(); // images ikut kehapus (cascade)
+
         Cache::forget('portfolios');
+        Cache::forget('homepage_portfolios_latest_8');
 
         return redirect()
             ->route('portfolios.index')

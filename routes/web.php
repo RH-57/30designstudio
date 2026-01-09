@@ -12,6 +12,8 @@ use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\Website\WebAboutController;
 use App\Http\Controllers\Website\WebContactController;
 use App\Http\Controllers\Website\WebHomeController;
+use App\Http\Controllers\Website\WebPortfolioController;
+use App\Http\Controllers\Website\WebServiceController;
 use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
@@ -55,10 +57,6 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 
 Route::get('/', [WebHomeController::class, 'index'])->name('home');
 Route::get('/about-us', [WebAboutController::class, 'index'])->name('about');
-Route::get('/portfolio', function () {
-    return view('website.portfolio');
-});
+Route::get('/portfolio', [WebPortfolioController::class, 'index'])->name('portfolio');
 Route::get('/contact-us', [WebContactController::class, 'index'])->name('contact');
-Route::get('/services', function () {
-    return view('website.show-service');
-});
+Route::get('/{slug}', [WebServiceController::class, 'show'])->name('show.service');

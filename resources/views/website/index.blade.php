@@ -76,7 +76,7 @@
                         hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(168,85,247,0.55)]
                         active:translate-y-0 active:shadow-[0_6px_14px_rgba(0,0,0,0.25)]
                         overflow-hidden group">
-                            Konsultasi Gratis
+                            Buat Desain Sekarang
                         </a>
 
                         <a href="#service" class="inline-block p-[2px] rounded-lg bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600">
@@ -369,66 +369,72 @@
 
                 <!-- ROW 1 (LEFT) -->
                 <div class="overflow-hidden">
-                    <div class="flex min-w-full md:w-[200%] gap-16 animate-[marquee-left_35s_linear_infinite] md:animate-[marquee-left_35s_linear_infinite] hover:[animation-play-state:paused]">
+                    <div class="flex min-w-full md:w-[200%] gap-16 animate-[marquee-left_35s_linear_infinite] hover:[animation-play-state:paused]">
 
-                        <!-- SET A -->
+                        {{-- SET A --}}
                         <div class="flex shrink-0 items-center gap-14 md:gap-16">
-                            <!-- LOGO ITEM -->
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            @foreach($brands as $brand)
+                                <div class="w-24 sm:w-28 md:w-32 flex justify-center">
+                                    <img
+                                        src="{{ asset('storage/'.$brand->logo) }}"
+                                        alt="{{ $brand->name }}"
+                                        class="h-14 max-w-full object-contain
+                                            opacity-60 grayscale
+                                            hover:opacity-100 hover:grayscale-0 transition">
+                                </div>
+                            @endforeach
                         </div>
 
-                        <!-- SET B (DUPLIKASI) -->
+                        {{-- SET B (DUPLIKASI) --}}
                         <div class="flex shrink-0 items-center gap-14 md:gap-16">
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            @foreach($brands as $brand)
+                                <div class="w-24 sm:w-28 md:w-32 flex justify-center">
+                                    <img
+                                        src="{{ asset('storage/'.$brand->logo) }}"
+                                        alt="{{ $brand->name }}"
+                                        class="h-14 max-w-full object-contain
+                                            opacity-60 grayscale
+                                            hover:opacity-100 hover:grayscale-0 transition">
+                                </div>
+                            @endforeach
                         </div>
 
                     </div>
+
                 </div>
 
                 <!-- ROW 2 (RIGHT) -->
                 <div class="overflow-hidden">
-                    <div class="flex min-w-full md:w-[200%] gap-20 animate-[marquee-right_40s_linear_infinite] md:animate-[marquee-right_35s_linear_infinite] hover:[animation-play-state:paused]">
+                    <div class="flex min-w-full md:w-[200%] gap-20 animate-[marquee-right_40s_linear_infinite] hover:[animation-play-state:paused]">
 
-                        <div class="flex shrink-0 items-center gap-16 md:gap-20 sm:gap-10">
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                        <div class="flex shrink-0 items-center gap-16 md:gap-20">
+                            @foreach($brands as $brand)
+                                <div class="w-24 sm:w-28 md:w-32 flex justify-center">
+                                    <img
+                                        src="{{ asset('storage/'.$brand->logo) }}"
+                                        alt="{{ $brand->name }}"
+                                        class="h-14 max-w-full object-contain
+                                            opacity-60 grayscale
+                                            hover:opacity-100 hover:grayscale-0 transition">
+                                </div>
+                            @endforeach
                         </div>
 
                         <div class="flex shrink-0 items-center gap-16 md:gap-20">
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-1.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
-                            <div class="w-24 sm:w-28 md:w-32 flex justify-center"><img src="{{ asset('assets/website/clients/client-2.png') }}" class="h-14 max-w-full object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition"></div>
+                            @foreach($brands as $brand)
+                                <div class="w-24 sm:w-28 md:w-32 flex justify-center">
+                                    <img
+                                        src="{{ asset('storage/'.$brand->logo) }}"
+                                        alt="{{ $brand->name }}"
+                                        class="h-14 max-w-full object-contain
+                                            opacity-60 grayscale
+                                            hover:opacity-100 hover:grayscale-0 transition">
+                                </div>
+                            @endforeach
                         </div>
 
                     </div>
+
                 </div>
 
             </div>
@@ -437,10 +443,10 @@
 
     <section id="services" class="relative py-24 bg-white overflow-hidden">
 
-        <!-- Soft Gradient Background -->
+        <!-- Soft Background -->
         <div class="absolute inset-0 -z-10">
-            <div class="absolute top-0 left-0 w-96 h-96 bg-orange-100/40 blur-3xl rounded-full"></div>
-            <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-pink-100/40 blur-3xl rounded-full"></div>
+            <div class="absolute top-0 left-0 w-96 h-96 bg-orange-100/30 blur-3xl rounded-full"></div>
+            <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-pink-100/30 blur-3xl rounded-full"></div>
         </div>
 
         <div class="w-full max-w-screen-xl mx-auto px-4 md:px-20">
@@ -448,82 +454,77 @@
             <!-- TITLE -->
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">
-
                     <span class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
                         Solusi Kreatif
                     </span>
-                     untuk Brand Kamu
+                    untuk Brand Kamu
                 </h2>
                 <p class="text-gray-600 text-sm mt-4 max-w-2xl mx-auto">
-                    Solusi desain kreatif untuk memperkuat identitas dan citra brand Anda.
+                    Kami membantu brand tampil lebih profesional, menarik, dan siap bersaing melalui solusi desain yang strategis.
                 </p>
             </div>
 
             <!-- SERVICES GRID -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 @foreach($services as $service)
-                <!-- SERVICE ITEM -->
-                <div class="group bg-white rounded-xl shadow-sm hover:shadow-xl transition overflow-hidden">
-                    <div class="group relative h-80 rounded-3xl overflow-hidden shadow-lg">
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
 
-                        <!-- IMAGE -->
+                    <!-- IMAGE -->
+                    <div class="relative h-64 overflow-hidden">
                         <img
                             src="{{ asset('storage/' . $service->hero_image) }}"
                             alt="{{ $service->name }}"
                             class="absolute inset-0 w-full h-full object-cover
                                 group-hover:scale-105 transition duration-700"
-                        />
+                        >
 
+                        <!-- Soft Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+                    </div>
 
-                        <!-- DARK OVERLAY -->
-                        <div class="absolute inset-0 bg-gradient-to-t
-                                    from-black/70 via-black/30 to-transparent">
-                        </div>
+                    <!-- CONTENT -->
+                    <div class="p-6 flex flex-col min-h-[220px]">
 
-                        <!-- CONTENT -->
-                        <div class="relative z-10 h-full flex flex-col justify-end items-center p-6 text-center">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">
+                            {{ $service->name }}
+                        </h3>
 
-                            <h3 class="text-xl font-extrabold text-white mb-4
-                                    drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
-                                {{$service->name}}
-                            </h3>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-6 line-clamp-3">
+                            {{ $service->short_description ?? 'Solusi desain profesional untuk meningkatkan nilai dan daya tarik brand Anda.' }}
+                        </p>
 
-                           <a href="https://wa.me/628xxxxxxxxx"
+                        <!-- ACTION -->
+                        <div class="mt-auto flex items-center justify-between gap-3">
+
+                            <!-- DETAIL -->
+                            <a href="{{ route('show.service', $service->slug) }}"
+                            class="text-sm font-semibold text-gray-700 hover:text-orange-500 transition">
+                                Lihat Detail →
+                            </a>
+
+                            <!-- CTA -->
+                            <a href="https://wa.me/628xxxxxxxxx"
                             target="_blank"
-                            class="group relative inline-flex items-center justify-center
-                                    w-40 h-11
-                                    rounded-xl
+                            class="inline-flex items-center gap-2 px-4 py-2
+                                    rounded-lg
                                     bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
-                                    text-white text-sm font-semibold
-                                    shadow-md shadow-black/25
-                                    overflow-hidden
-                                    transition
-                                    active:scale-95">
+                                    text-white text-xs font-semibold
+                                    shadow-md hover:shadow-lg
+                                    transition active:scale-95">
 
-                                <!-- TEXT -->
-                                <span class="absolute inset-0 flex items-center justify-center
-                                            transition-all duration-300
-                                            group-hover:opacity-0 group-hover:scale-75">
-                                    Pesan Sekarang
-                                </span>
-
-                                <!-- WHATSAPP ICON -->
-                                <span class="absolute inset-0 flex items-center justify-center
-                                            opacity-0 scale-75
-                                            transition-all duration-300
-                                            group-hover:opacity-100 group-hover:scale-100">
-                                    <i class="fab fa-whatsapp text-2xl"></i>
-                                </span>
-
+                                <i class="fab fa-whatsapp text-sm"></i>
+                                Konsultasi Gratis
                             </a>
                         </div>
                     </div>
                 </div>
                 @endforeach
+
             </div>
         </div>
     </section>
+
 
     <section id="portfolio" class="relative py-24 bg-white overflow-hidden">
         <div class="absolute inset-0 -z-10">
@@ -549,106 +550,39 @@
             <!-- PORTFOLIO GRID -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
 
-                <!-- ITEM -->
-                <div class="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
-                    onclick="openPortfolio('{{ asset('assets/website/services/service-1.webp') }}')">
+                @foreach ($portfolios as $portfolio)
+                <div
+                    class="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
+                    onclick='openPortfolio(@json(
+                        $portfolio->images
+                            ->map(fn($img) => asset("storage/".$img->image))
+                            ->values()
+                    ))'>
 
                     <img
-                        src="{{ asset('assets/website/services/service-1.webp') }}"
-                        alt="Kopi Nusantara"
+                        src="{{ asset('storage/'.$portfolio->cover) }}"
+                        alt="{{ $portfolio->name }}"
                         class="w-full aspect-square object-cover group-hover:scale-105 transition duration-700"
-                    />
-
+                    >
 
                     <!-- OVERLAY -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 
                     <!-- TEXT -->
-                    <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
-                        <h3 class="text-xl font-extrabold text-white
-                                drop-shadow-[0_3px_8px_rgba(0,0,0,0.9)]">
-                            Kopi Nusantara
+                    <div class="absolute bottom-0 left-0 right-0 p-4 z-10">
+                        <h3 class="text-base font-semibold text-white/95">
+                            {{ $portfolio->name }}
                         </h3>
-                        <p class="text-sm text-white/90 mt-1
-                                drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-                            Desain Packaging
+                        <p class="text-xs text-white/80">
+                            {{ $portfolio->service->name ?? '-' }}
                         </p>
                     </div>
                 </div>
+                @endforeach
 
 
-                <!-- ITEM -->
-                <div class="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
-                    onclick="openPortfolio('{{ asset('assets/website/services/service-2.webp') }}')">
-
-                    <img src="{{ asset('assets/website/services/service-2.webp') }}"
-                        alt="Kopi Nusantara"
-                        class="w-full aspect-square object-cover group-hover:scale-105 transition duration-700">
-
-                    <!-- OVERLAY -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-
-                    <!-- TEXT -->
-                    <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
-                        <h3 class="text-xl font-extrabold text-white
-                                drop-shadow-[0_3px_8px_rgba(0,0,0,0.9)]">
-                            Kopi Nusantara
-                        </h3>
-                        <p class="text-sm text-white/90 mt-1
-                                drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-                            Desain Packaging
-                        </p>
-                    </div>
-                </div>
-
-                <div class="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
-                    onclick="openPortfolio('{{ asset('assets/website/services/service-2.webp') }}')">
-
-                    <img src="{{ asset('assets/website/services/service-2.webp') }}"
-                        alt="Kopi Nusantara"
-                        class="w-full aspect-square object-cover group-hover:scale-105 transition duration-700">
-
-                    <!-- OVERLAY -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-
-                    <!-- TEXT -->
-                    <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
-                        <h3 class="text-xl font-extrabold text-white
-                                drop-shadow-[0_3px_8px_rgba(0,0,0,0.9)]">
-                            Kopi Nusantara
-                        </h3>
-                        <p class="text-sm text-white/90 mt-1
-                                drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-                            Desain Packaging
-                        </p>
-                    </div>
-                </div>
-
-
-                <!-- ITEM -->
-                <div class="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
-                    onclick="openPortfolio('{{ asset('assets/website/services/service-3.webp') }}')">
-
-                    <img src="{{ asset('assets/website/services/service-3.webp') }}"
-                        alt="Kopi Nusantara"
-                        class="w-full aspect-square object-cover group-hover:scale-105 transition duration-700">
-
-                    <!-- OVERLAY -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-
-                    <!-- TEXT -->
-                    <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
-                        <h3 class="text-xl font-extrabold text-white
-                                drop-shadow-[0_3px_8px_rgba(0,0,0,0.9)]">
-                            Kopi Nusantara
-                        </h3>
-                        <p class="text-sm text-white/90 mt-1
-                                drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-                            Desain Packaging
-                        </p>
-                    </div>
-                </div>
             </div>
+
         </div>
     </section>
 
@@ -667,8 +601,8 @@
             <div class="text-center mb-14">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">
                     Siap
-                    <span class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">Wujudkan </span>
-                    Ide Kamu?
+                    <span class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">Cetak Packaging</span>
+                     Brand Kamu?
                 </h2>
                 <p class="text-gray-600 text-sm mt-4 max-w-2xl mx-auto">
                     Siap membantu Anda untuk konsultasi proyek, penawaran harga, atau pertanyaan lainnya.
@@ -689,7 +623,7 @@
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold text-gray-900">Telepon</h4>
-                                <p class="text-gray-600 text-sm">+62 812-3456-7890</p>
+                                <p class="text-gray-600 text-sm">+{{$contact->phone}}</p>
                             </div>
                         </div>
                     </div>
@@ -702,7 +636,7 @@
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold text-gray-900">Email</h4>
-                                <p class="text-gray-600 text-sm">info@konstruksi.com</p>
+                                <p class="text-gray-600 text-sm">{{$contact->email}}</p>
                             </div>
                         </div>
                     </div>
@@ -715,7 +649,7 @@
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold text-gray-900">Alamat Kantor</h4>
-                                <p class="text-gray-600 text-sm">Jl. Pembangunan No. 45, Jakarta</p>
+                                <p class="text-gray-600 text-sm">{{$contact->address}}</p>
                             </div>
                         </div>
                     </div>
@@ -802,20 +736,19 @@
 
     <!-- PORTFOLIO PREVIEW MODAL -->
     <div id="portfolioModal"
-        class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/80 backdrop-blur-md px-4">
+        class="fixed inset-0 z-[9999] hidden bg-black/80 backdrop-blur-md px-4 py-10 overflow-y-auto">
 
-        <!-- CLOSE BUTTON -->
+        <!-- CLOSE -->
         <button onclick="closePortfolio()"
-                class="absolute top-6 right-6 text-white text-3xl hover:scale-110 transition">
+            class="fixed top-6 right-6 text-white text-4xl hover:scale-110 transition">
             &times;
         </button>
 
-        <!-- IMAGE -->
-        <img id="portfolioModalImage"
-            src=""
-            alt="Preview"
-            class="max-w-full max-h-[90vh] rounded-2xl shadow-2xl">
+        <div id="portfolioImages"
+            class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        </div>
     </div>
+
 
 
     <!-- FOOTER -->

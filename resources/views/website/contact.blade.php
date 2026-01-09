@@ -53,6 +53,10 @@
         <div class="absolute -bottom-24 -left-24 w-[450px] h-[450px] bg-pink-200/40 blur-3xl rounded-full"></div>
 
         <div class="relative z-10 max-w-screen-xl mx-auto px-4 md:px-20 text-center">
+            <p class="text-xs uppercase tracking-widest text-gray-500 mb-4">
+                Home / Contact Us
+            </p>
+
             <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">
                 Hubungi
                 <span class="block bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
@@ -60,117 +64,159 @@
                 </span>
             </h1>
 
-            <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
-                Punya ide, proyek, atau sekadar ingin bertanya?
-                Kami siap mendengarkan dan membantu mewujudkannya.
-            </p>
-
-            <p class="text-xs uppercase tracking-widest text-gray-500 mt-6">
-                Home / Contact Us
-            </p>
         </div>
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="relative py-24 bg-white overflow-hidden">
+    <section id="contact" class="relative py-20 bg-white overflow-hidden">
+
+        <!-- Soft Gradient Background -->
         <div class="absolute inset-0 -z-10">
             <div class="absolute top-10 left-10 w-96 h-96 bg-orange-200/30 blur-3xl rounded-full"></div>
             <div class="absolute bottom-0 right-10 w-[500px] h-[500px] bg-yellow-200/30 blur-3xl rounded-full"></div>
         </div>
 
-        <div class="max-w-screen-xl mx-auto px-4 md:px-20">
+        <div class="w-full max-w-screen-xl mx-auto px-4 md:px-20">
 
+            <!-- TITLE -->
             <div class="text-center mb-14">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">
                     Siap
-                    <span class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                        Wujudkan
-                    </span>
+                    <span class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">Wujudkan </span>
                     Ide Kamu?
                 </h2>
-                <p class="text-gray-600 text-sm mt-4 max-w-2xl mx-auto">
-                    Konsultasi proyek, penawaran harga, atau pertanyaan lainnya.
+                <p class="text-gray-800 text-sm mt-4 max-w-2xl mx-auto">
+                    Siap membantu Anda untuk konsultasi proyek, penawaran harga, atau pertanyaan lainnya.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-14">
+            <!-- GRID WRAPPER -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 
-                <!-- INFO -->
+                <!-- LEFT CONTACT INFO -->
                 <div class="space-y-8">
-                    <!-- Phone -->
-                    <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg p-6">
-                        <div class="flex gap-5">
+
+                    <!-- CARD -->
+                    <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg p-3">
+                        <div class="flex items-start gap-5">
                             <div class="bg-orange-500/10 p-4 rounded-2xl">
-                                <i class="fas fa-phone text-2xl bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent"></i>
+                                <i class="fas fa-phone bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-3xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-900">Telepon</h4>
-                                <p class="text-sm text-gray-600 mt-1">+62 812-3456-7890</p>
+                                <h4 class="text-xl font-bold text-gray-900">Telepon</h4>
+                                <p class="text-gray-600 text-sm">+{{$contact->phone}}</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Email -->
-                    <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg p-6">
-                        <div class="flex gap-5">
+                    <!-- CARD -->
+                    <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg p-3">
+                        <div class="flex items-start gap-5">
                             <div class="bg-orange-500/10 p-4 rounded-2xl">
-                                <i class="fas fa-envelope text-2xl bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent"></i>
+                                <i class="fas fa-envelope bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-3xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-900">Email</h4>
-                                <p class="text-sm text-gray-600 mt-1">info@30design.studio</p>
+                                <h4 class="text-xl font-bold text-gray-900">Email</h4>
+                                <p class="text-gray-600 text-sm">{{$contact->email}}</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Address -->
-                    <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg p-6">
-                        <div class="flex gap-5">
+                    <!-- CARD -->
+                    <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg p-3">
+                        <div class="flex items-start gap-5">
                             <div class="bg-orange-500/10 p-4 rounded-2xl">
-                                <i class="fas fa-map-marker-alt text-2xl bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent"></i>
+                                <i class="fas fa-map-marker-alt bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-3xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-900">Alamat Kantor</h4>
-                                <p class="text-sm text-gray-600 mt-1">
-                                    Jl. Pembangunan No. 45, Jakarta
-                                </p>
+                                <h4 class="text-xl font-bold text-gray-900">Alamat Kantor</h4>
+                                <p class="text-gray-600 text-sm">{{$contact->address}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- FORM -->
-                <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg p-8">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">
-                        Konsultasi Proyek
-                    </h3>
-                    <p class="text-gray-600 text-sm mb-8">
-                        Ceritakan kebutuhan desain Anda.
-                    </p>
+                <!-- RIGHT FORM -->
+                <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg p-5">
+                    <form action="" method="POST" class="space-y-6">
 
-                    <form class="space-y-6">
-                        <input type="text" placeholder="Nama Lengkap"
-                               class="w-full px-5 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-orange-400">
+                        <!-- Name -->
+                        <div>
+                            <label class="text-gray-700 text-sm font-semibold">Nama Lengkap</label>
+                            <div class="mt-2 rounded-xl p-[2px] bg-gray-200
+                                        focus-within:bg-gradient-to-r
+                                        focus-within:from-orange-500
+                                        focus-within:via-pink-500
+                                        focus-within:to-purple-600
+                                        transition">
+                                <input
+                                    type="text"
+                                    required
+                                    class="w-full px-5 py-3 rounded-[10px]
+                                        bg-white
+                                        border border-transparent
+                                        outline-none
+                                        focus:ring-0">
+                            </div>
+                        </div>
 
-                        <input type="email" placeholder="Email"
-                               class="w-full px-5 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-orange-400">
+                        <!-- Email -->
+                        <div>
+                            <label class="text-gray-700 text-sm font-semibold">Email</label>
+                            <div class="mt-2 rounded-xl p-[2px] bg-gray-200
+                                        focus-within:bg-gradient-to-r
+                                        focus-within:from-orange-500
+                                        focus-within:via-pink-500
+                                        focus-within:to-purple-600
+                                        transition">
+                                <input
+                                    type="email"
+                                    required
+                                    class="w-full px-5 py-3 rounded-[10px]
+                                        bg-white
+                                        border border-transparent
+                                        outline-none
+                                        focus:ring-0">
+                            </div>
+                        </div>
 
-                        <textarea rows="4" placeholder="Pesan / Pertanyaan"
-                                  class="w-full px-5 py-3 rounded-xl border resize-none focus:outline-none focus:ring-2 focus:ring-orange-400"></textarea>
+                        <!-- Message -->
+                        <div>
+                            <label class="text-gray-700 text-sm font-semibold">Pesan / Pertanyaan</label>
+                            <div class="mt-2 rounded-xl p-[2px] bg-gray-200
+                                        focus-within:bg-gradient-to-r
+                                        focus-within:from-orange-500
+                                        focus-within:via-pink-500
+                                        focus-within:to-purple-600
+                                        transition">
+                                <textarea
+                                    rows="4"
+                                    required
+                                    class="w-full px-5 py-3 rounded-[10px]
+                                        bg-white
+                                        border border-transparent
+                                        outline-none
+                                        resize-none
+                                        focus:ring-0"></textarea>
+                            </div>
+                        </div>
 
-                        <button class="w-full py-3 rounded-xl text-white font-semibold
-                            bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 shadow-lg">
+                        <!-- Button -->
+                        <button
+                            class="w-full bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
+                                hover:opacity-90
+                                text-white py-3 rounded-xl font-semibold shadow-lg transition">
                             Kirim Pesan
                         </button>
+
                     </form>
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- MAPS SECTION -->
-    <section class="relative py-24 bg-white overflow-hidden">
+    <section class="relative py-20 bg-white overflow-hidden">
         <div class="absolute inset-0 -z-10">
             <div class="absolute top-10 left-10 w-96 h-96 bg-orange-200/30 blur-3xl rounded-full"></div>
             <div class="absolute bottom-0 right-10 w-[500px] h-[500px] bg-pink-200/30 blur-3xl rounded-full"></div>
@@ -188,7 +234,7 @@
 
             <div class="rounded-3xl overflow-hidden shadow-xl border border-orange-100">
                 <iframe
-                    src="https://www.google.com/maps?q=Jakarta&output=embed"
+                    src="{{$contact->address}}"
                     class="w-full h-[450px] border-0"
                     loading="lazy">
                 </iframe>

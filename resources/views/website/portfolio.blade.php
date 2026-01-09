@@ -65,7 +65,7 @@
             </h1>
               <!-- BREADCRUMB -->
             <p class="text-xs uppercase tracking-widest text-gray-500 mb-4">
-                Home / Tentang Kami
+                Home / Portofolio
             </p>
         </div>
     </section>
@@ -86,107 +86,37 @@
             </div>
 
             <!-- PORTFOLIO GRID -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
 
-                <!-- ITEM -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
-                    onclick="openPortfolio('{{ asset('assets/website/services/service-1.webp') }}')">
+                @foreach ($portfolios as $portfolio)
+                <div
+                    class="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
+                    onclick='openPortfolio(@json(
+                        $portfolio->images
+                            ->map(fn($img) => asset("storage/".$img->image))
+                            ->values()
+                    ))'>
 
                     <img
-                        src="{{ asset('assets/website/services/service-1.webp') }}"
-                        alt="Kopi Nusantara"
+                        src="{{ asset('storage/'.$portfolio->cover) }}"
+                        alt="{{ $portfolio->name }}"
                         class="w-full aspect-square object-cover group-hover:scale-105 transition duration-700"
-                    />
-
+                    >
 
                     <!-- OVERLAY -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 
                     <!-- TEXT -->
                     <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
-                        <h3 class="text-xl font-extrabold text-white
-                                drop-shadow-[0_3px_8px_rgba(0,0,0,0.9)]">
-                            Kopi Nusantara
+                        <h3 class="text-base font-extrabold text-white drop-shadow">
+                            {{ $portfolio->name }}
                         </h3>
-                        <p class="text-sm text-white/90 mt-1
-                                drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-                            Desain Packaging
+                        <p class="text-xs text-white/90 mt-1 drop-shadow">
+                            {{ $portfolio->service->name ?? '-' }}
                         </p>
                     </div>
                 </div>
-
-
-                <!-- ITEM -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
-                    onclick="openPortfolio('{{ asset('assets/website/services/service-2.webp') }}')">
-
-                    <img src="{{ asset('assets/website/services/service-2.webp') }}"
-                        alt="Kopi Nusantara"
-                        class="w-full aspect-square object-cover group-hover:scale-105 transition duration-700">
-
-                    <!-- OVERLAY -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-
-                    <!-- TEXT -->
-                    <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
-                        <h3 class="text-xl font-extrabold text-white
-                                drop-shadow-[0_3px_8px_rgba(0,0,0,0.9)]">
-                            Kopi Nusantara
-                        </h3>
-                        <p class="text-sm text-white/90 mt-1
-                                drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-                            Desain Packaging
-                        </p>
-                    </div>
-                </div>
-
-                <div class="group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
-                    onclick="openPortfolio('{{ asset('assets/website/services/service-2.webp') }}')">
-
-                    <img src="{{ asset('assets/website/services/service-2.webp') }}"
-                        alt="Kopi Nusantara"
-                        class="w-full aspect-square object-cover group-hover:scale-105 transition duration-700">
-
-                    <!-- OVERLAY -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-
-                    <!-- TEXT -->
-                    <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
-                        <h3 class="text-xl font-extrabold text-white
-                                drop-shadow-[0_3px_8px_rgba(0,0,0,0.9)]">
-                            Kopi Nusantara
-                        </h3>
-                        <p class="text-sm text-white/90 mt-1
-                                drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-                            Desain Packaging
-                        </p>
-                    </div>
-                </div>
-
-
-                <!-- ITEM -->
-                <div class="group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
-                    onclick="openPortfolio('{{ asset('assets/website/services/service-3.webp') }}')">
-
-                    <img src="{{ asset('assets/website/services/service-3.webp') }}"
-                        alt="Kopi Nusantara"
-                        class="w-full aspect-square object-cover group-hover:scale-105 transition duration-700">
-
-                    <!-- OVERLAY -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-
-                    <!-- TEXT -->
-                    <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
-                        <h3 class="text-xl font-extrabold text-white
-                                drop-shadow-[0_3px_8px_rgba(0,0,0,0.9)]">
-                            Kopi Nusantara
-                        </h3>
-                        <p class="text-sm text-white/90 mt-1
-                                drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-                            Desain Packaging
-                        </p>
-                    </div>
-                </div>
+                @endforeach
 
 
             </div>
@@ -195,25 +125,28 @@
 
     <!-- PORTFOLIO PREVIEW MODAL -->
     <div id="portfolioModal"
-        class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/80 backdrop-blur-md px-4">
+        class="fixed inset-0 z-[9999] hidden flex items-center justify-center bg-black/80 backdrop-blur-md px-4 py-10 overflow-y-auto">
 
-        <!-- CLOSE BUTTON -->
+
+        <!-- CLOSE -->
         <button onclick="closePortfolio()"
-                class="absolute top-6 right-6 text-white text-3xl hover:scale-110 transition">
+            class="fixed top-6 right-6 text-white text-4xl hover:scale-110 transition">
             &times;
         </button>
 
-        <!-- IMAGE -->
-        <img id="portfolioModalImage"
-            src=""
-            alt="Preview"
-            class="max-w-full max-h-[90vh] rounded-2xl shadow-2xl">
+        <div
+            id="portfolioImages"
+            class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        </div>
     </div>
+
+
 
     @include('website.components.cta')
 
     <!-- FOOTER -->
     @include('website.components.footer')
+
 
 </body>
 </html>

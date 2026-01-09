@@ -56,7 +56,7 @@
                             <ul class="py-2 text-sm text-gray-700">
                                 @foreach($services as $service)
                                 <li>
-                                    <a href="#logo-design"
+                                    <a href="{{ route('show.service', $service->slug) }}"
                                     class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">
                                         {{$service->name}}
                                     </a>
@@ -67,7 +67,7 @@
                     </li>
 
                     <li>
-                        <a href="/portfolio" class="transition bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
+                        <a href="{{route('portfolio')}}" class="transition bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
                                                 bg-clip-text hover:text-transparent">
                             Portofolio
                         </a>
@@ -97,7 +97,7 @@
                     <span class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></span>
 
                     <span class="relative z-10 flex items-center gap-2">
-                        Hubungi Kami
+                        Buat Desain Sekarang
                     </span>
                 </a>
 
@@ -146,7 +146,7 @@
                 active:scale-95 overflow-hidden group">
 
                     <span class="absolute inset-0 bg-white/20 opacity-0 group-active:opacity-100 transition"></span>
-                    <span class="relative z-10">Hubungi Kami</span>
+                    <span class="relative z-10">Buat Desain Sekarang</span>
                 </a>
 
             </div>

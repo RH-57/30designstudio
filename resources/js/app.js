@@ -127,23 +127,44 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Preview Image Portfolio
+// Portfolio Gallery Modal
 const modal = document.getElementById('portfolioModal');
-const modalImage = document.getElementById('portfolioModalImage');
+const container = document.getElementById('portfolioImages');
 
-window.openPortfolio = function (imageUrl) {
-    modalImage.src = imageUrl;
+window.openPortfolio = function (images) {
+    if (!modal || !container) return;
+
+    container.innerHTML = '';
+
+    images.forEach(img => {
+        container.innerHTML += `
+            <img src="${img}"
+                class="w-full rounded-2xl shadow-lg hover:scale-105 transition duration-300 cursor-pointer"
+                loading="lazy">
+        `;
+    });
+
     modal.classList.remove('hidden');
-    modal.classList.add('flex');
     document.body.classList.add('overflow-hidden');
 };
 
 window.closePortfolio = function () {
+    if (!modal) return;
+
     modal.classList.add('hidden');
-    modal.classList.remove('flex');
-    modalImage.src = '';
     document.body.classList.remove('overflow-hidden');
 };
+
+// Close on background click
+modal?.addEventListener('click', function (e) {
+    if (e.target === modal) window.closePortfolio();
+});
+
+// Close on ESC
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') window.closePortfolio();
+});
+
 
 // Close on background click
 modal.addEventListener('click', function (e) {

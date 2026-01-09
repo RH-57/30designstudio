@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
+use App\Models\Brand;
 use App\Models\Contact;
 use App\Models\MediaSocial;
+use App\Models\Portfolio;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
@@ -26,10 +28,20 @@ class WebHomeController extends Controller
                 ->get();
         });
 
+        $brands = Cache::remember('brands', 3600, function () {
+            return Brand::get();
+        });
+
+        $portfolios = Cache::remember('homepage_portfolios_latest_8', 3600, function () {
+            return Portfolio::with(['service', 'images'])->latest()->take(8)->get();
+        });
+
         return view('website.index', compact(
             'mediasocials',
             'contact',
             'services',
+            'brands',
+            'portfolios',
         ));
     }
 }
