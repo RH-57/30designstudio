@@ -81,7 +81,7 @@
                 </div>
 
                 <div class="row mb-3">
-                  <label class="col-sm-2 col-form-label">Hero Image</label>
+                  <label class="col-sm-2 col-form-label">Headline Background</label>
                   <div class="col-sm-10">
                     <input type="file" name="hero_image" class="form-control">
                   </div>
@@ -94,6 +94,15 @@
                   <div class="col-sm-10">
                     <input type="text" name="name" value="{{ old('name') }}" class="form-control" required>
                   </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="description" class="col-sm-2 col-form-label">Description</label>
+                    <div class="col-sm-10">
+                        <textarea name="description" id="editor" class="form-control" rows="6">
+                            {{old('description')}}
+                        </textarea>
+                    </div>
                 </div>
 
                 <div class="row mb-3">
@@ -171,17 +180,29 @@
             Paragraph,
             Bold,
             Italic,
-            Font
+            Font,
+            List,
+            Table,
+            TableToolbar
         } from 'ckeditor5';
 
         ClassicEditor
             .create( document.querySelector( '#editor' ), {
                 licenseKey: 'GPL', // bebas, karena kamu pakai versi GPL
-                plugins: [ Essentials, Paragraph, Bold, Italic, Font ],
+                plugins: [ Essentials, Paragraph, Bold, Italic, Font, List, Table, TableToolbar ],
                 toolbar: [
                     'undo', 'redo', '|', 'bold', 'italic', '|',
+                    'bulletedList', 'numberedList', '|',     // ul / ol
+                    'insertTable', '|',                      // table
                     'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor'
-                ]
+                ],
+                table: {
+                    contentToolbar: [
+                        'tableColumn',
+                        'tableRow',
+                        'mergeTableCells'
+                    ]
+                }
             } )
             .then( editor => {
                 window.editor = editor;

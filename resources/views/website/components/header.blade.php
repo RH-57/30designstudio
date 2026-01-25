@@ -5,18 +5,18 @@
         <div class="px-4 md:px-6 py-3 flex items-center justify-between">
 
             <!-- LEFT: Logo -->
-            <a href="/" class="flex items-center gap-1">
-                <div class="h-8 w-8 rounded-md bg-orange-600 flex items-center justify-center text-white font-bold">30</div>
-                <span class="hidden lg:inline-block font-semibold
-                            bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
-                            bg-clip-text text-transparent">
-                    designstudio
-                </span>
+            <a href="/" class="flex items-center">
+                <img
+                    src="{{asset('assets/website/img/logo.webp')}}"
+                    alt="Design Studio Logo"
+                    class="h-20 md:h-24 w-auto object-contain -my-6 scale-110"
+                >
             </a>
+
 
             <!-- CENTER: Menu (desktop only) -->
             <nav class="hidden lg:flex justify-center">
-                <ul class="flex gap-8 items-center text-gray-800 font-medium">
+                <ul class="flex gap-8 items-center text-zinc-950 font-medium">
                     <li>
                         <a href="/" class="transition bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
                                         bg-clip-text hover:text-transparent">
@@ -117,8 +117,14 @@
         <!-- MOBILE MENU -->
         <div id="mobileMenu" class="hidden lg:hidden px-4 pb-4">
             <div class="flex flex-col gap-2 bg-white/60 backdrop-blur-xl rounded-b-2xl border border-white/30 px-4 py-4 shadow-inner">
-                <a href="#about" class="py-2 border-b border-gray-100 text-gray-700">Beranda</a>
-                <a href="#about" class="py-2 border-b border-gray-100 text-gray-700">Tentang Kami</a>
+
+                <a href="/" class="py-2 border-b border-gray-100 text-zinc-950">Beranda</a>
+
+                <a href="{{ route('about') }}" class="py-2 border-b border-gray-100 text-zinc-950">
+                    Tentang Kami
+                </a>
+
+                <!-- LAYANAN (Dropdown Mobile) -->
                 <button id="mobileServiceToggle"
                     class="flex items-center justify-between py-2 border-b border-gray-100 text-gray-700 w-full">
                     <span>Layanan</span>
@@ -130,20 +136,29 @@
                 </button>
 
                 <div id="mobileServiceMenu" class="hidden pl-4 pb-2">
-                    <a href="#logo-design" class="block py-2 text-sm text-gray-600">Desain Logo</a>
-                    <a href="#packaging-design" class="block py-2 text-sm text-gray-600">Desain Packaging</a>
-                    <a href="#branding" class="block py-2 text-sm text-gray-600">Branding & Identitas</a>
-                    <a href="#social-media" class="block py-2 text-sm text-gray-600">Konten Media Sosial</a>
+                    @foreach($services as $service)
+                        <a href="{{ route('show.service', $service->slug) }}"
+                            class="block py-2 text-sm text-gray-600">
+                            {{ $service->name }}
+                        </a>
+                    @endforeach
                 </div>
 
-                <a href="#contact" class="py-2 text-gray-700">Portofolio</a>
-                <a href="#contact" class="py-2 text-gray-700">Kontak</a>
-                <a href="#contact"
-                class="relative mt-3 inline-flex items-center justify-center w-full py-2.5 rounded-xl font-semibold text-white
-                bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
-                shadow-[0_6px_16px_rgba(236,72,153,0.45)]
-                transition-all duration-300
-                active:scale-95 overflow-hidden group">
+                <a href="{{ route('portfolio') }}" class="py-2 text-gray-700">
+                    Portofolio
+                </a>
+
+                <a href="{{ route('contact') }}" class="py-2 text-gray-700">
+                    Kontak
+                </a>
+
+                <a href="https://wa.me/{{$contact->phone}}"
+                    target="_blank"
+                    class="relative mt-3 inline-flex items-center justify-center w-full py-2.5 rounded-xl font-semibold text-white
+                    bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
+                    shadow-[0_6px_16px_rgba(236,72,153,0.45)]
+                    transition-all duration-300
+                    active:scale-95 overflow-hidden group">
 
                     <span class="absolute inset-0 bg-white/20 opacity-0 group-active:opacity-100 transition"></span>
                     <span class="relative z-10">Buat Desain Sekarang</span>
@@ -151,6 +166,7 @@
 
             </div>
         </div>
+
 
     </div>
 </header>

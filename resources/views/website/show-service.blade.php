@@ -6,6 +6,7 @@
 
     <title>Jasa Desain Packaging Produk Profesional | 30Design Studio</title>
 
+    <link href="{{asset('assets/website/img/favicon.ico')}}" rel="icon">
     <meta name="description" content="Jasa desain packaging produk profesional untuk UMKM & brand. Desain menarik, siap cetak, meningkatkan kepercayaan dan penjualan produk Anda.">
     <meta name="keywords" content="jasa desain packaging, desain kemasan produk, jasa desain kemasan, desain packaging UMKM">
     <meta name="robots" content="index, follow">

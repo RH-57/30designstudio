@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Jasa Desain & Cetak Packaging Terbaik - 30Design Studio</title>
+    <link href="{{asset('assets/website/img/favicon.ico')}}" rel="icon">
 
     <meta name="description" content="30Design Studio menyediakan jasa desain dan cetak packaging profesional untuk berbagai produk. Mulai dari konsep desain kemasan, visual branding, hingga proses cetak berkualitas tinggi agar produk Anda tampil menarik dan siap bersaing di pasaran.">
 
@@ -79,8 +80,8 @@
                             Buat Desain Sekarang
                         </a>
 
-                        <a href="#service" class="inline-block p-[2px] rounded-lg bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600">
-                            <span class="block px-6 py-3 rounded-lg bg-white text-orange-600 font-semibold hover:bg-orange-50 transition">
+                        <a href="#services" class="inline-block p-[2px] rounded-lg bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600">
+                            <span class="block px-2 py-3 rounded-lg bg-white text-orange-600 font-semibold hover:bg-orange-50 transition">
                                 Pelajari Layanan
                             </span>
                         </a>
@@ -105,7 +106,7 @@
 
                         <!-- IMAGE (DIPERBESAR KELUAR DARI CONTAINER) -->
                         <img
-                            src="{{ asset('assets/website/img/about.png') }}"
+                            src="{{ asset('assets/website/img/about.webp') }}"
                             alt="Contoh Desain"
                             id="scroll-image"
                             class="w-[200%] h-auto object-contain drop-shadow-2xl"> <!-- w-[120%] untuk lebih besar -->
@@ -144,7 +145,7 @@
 
                         <!-- ICON -->
                         <div class="bg-white/20 p-4 rounded-2xl">
-                            <i class="fas fa-check text-3xl bg-orange-400 bg-clip-text text-transparent"></i>
+                            <i class="fas fa-check text-3xl bg-gradient-to-r from-orange-400 via-pink-400 to-purple-400 bg-clip-text text-transparent"></i>
                         </div>
 
                         <!-- TEXT -->
@@ -169,7 +170,7 @@
 
                     <div class="relative z-10 flex items-center gap-5 py-6 px-7 backdrop-blur-sm">
                         <div class="bg-white/20 p-4 rounded-2xl">
-                            <i class="fas fa-award text-3xl bg-gradient-to-r from-orange-400 via-pink-400 to-purple-500 bg-clip-text text-transparent"></i>
+                            <i class="fas fa-award text-3xl bg-gradient-to-r from-orange-400 via-pink-400 to-purple-400 bg-clip-text text-transparent"></i>
                         </div>
 
                         <div>
@@ -193,7 +194,7 @@
 
                     <div class="relative z-10 flex items-center gap-5 py-6 px-7 backdrop-blur-sm">
                         <div class="bg-white/20 p-4 rounded-2xl">
-                            <i class="fas fa-clock text-3xl bg-gradient-to-r from-orange-400 via-pink-400 to-purple-500 bg-clip-text text-transparent"></i>
+                            <i class="fas fa-clock text-3xl bg-gradient-to-r from-orange-400 via-pink-400 to-purple-400 bg-clip-text text-transparent"></i>
                         </div>
 
                         <div>
@@ -210,21 +211,17 @@
         </div>
     </section>
 
-
-
-
+    <!--
     <section id="about" class="relative py-24 bg-white overflow-hidden">
 
-        <!-- Soft Gradient Background -->
+
         <div class="absolute inset-0 -z-10">
             <div class="absolute top-10 right-10 w-96 h-96 bg-orange-100/40 blur-3xl rounded-full"></div>
             <div class="absolute -bottom-20 left-0 w-[500px] h-[500px] bg-pink-100/40 blur-3xl rounded-full"></div>
         </div>
 
-        <!-- WRAPPER -->
         <div class="w-full max-w-screen-xl mx-auto px-4 md:px-20">
 
-            <!-- TITLE -->
             <div class="text-center mb-14">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">
                     Cerita di Balik
@@ -238,10 +235,8 @@
                 </p>
             </div>
 
-            <!-- CONTENT GRID -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
 
-                <!-- LEFT VIDEO -->
                 <div class="flex justify-center relative">
                     <div id="scroll-image-container" class="relative
                         w-[240px] h-[240px]
@@ -250,13 +245,11 @@
                         rounded-full
                         flex items-center justify-center">
 
-                        <!-- GRADIENT BLUR BACKGROUND -->
                         <div class="absolute inset-0 rounded-full
                             bg-gradient-to-br from-orange-500 via-pink-500 to-purple-600
                             opacity-60 blur-xl">
                         </div>
 
-                        <!-- IMAGE -->
                         <img
                             src="{{ asset('assets/website/img/about.png') }}"
                             alt="Contoh Desain"
@@ -265,8 +258,6 @@
                     </div>
                 </div>
 
-
-                <!-- RIGHT TEXT & FEATURES -->
                 <div class="space-y-8">
 
                     <p class="text-gray-700 text-sm leading-relaxed">
@@ -275,10 +266,8 @@
                         menjadi desain yang efektif dan bermakna.
                     </p>
 
-                    <!-- FEATURES LIST -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
 
-                        <!-- Feature 1 -->
                         <div class="flex items-start gap-4">
                             <div class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-4xl">
                                 <i class="fas fa-palette"></i>
@@ -291,7 +280,6 @@
                             </div>
                         </div>
 
-                        <!-- Feature 2 -->
                         <div class="flex items-start gap-4">
                             <div class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-4xl">
                                 <i class="fas fa-lightbulb"></i>
@@ -304,7 +292,6 @@
                             </div>
                         </div>
 
-                        <!-- Feature 3 -->
                         <div class="flex items-start gap-4">
                             <div class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-4xl">
                                 <i class="fas fa-clock"></i>
@@ -317,7 +304,6 @@
                             </div>
                         </div>
 
-                        <!-- Feature 4 -->
                         <div class="flex items-start gap-4">
                             <div class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-4xl">
                                 <i class="fas fa-layer-group"></i>
@@ -335,9 +321,9 @@
 
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <section id="our-clients" class="relative py-24 bg-white overflow-hidden">
+    <section id="our-clients" class="relative py-16 bg-white overflow-hidden">
 
         <!-- Soft Gradient Background -->
         <div class="absolute inset-0 -z-10">
@@ -351,9 +337,9 @@
             <div class="text-center mb-14">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">
                     <span class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                        Dipercaya
+                        Klien
                     </span>
-                     oleh Berbagai Brand
+                     Kami
                 </h2>
                 <p class="text-gray-600 text-sm mt-4 max-w-2xl mx-auto">
                     Dipercaya oleh ribuan bisnis dari berbagai bidang dan skala usaha.
@@ -398,9 +384,7 @@
                                 </div>
                             @endforeach
                         </div>
-
                     </div>
-
                 </div>
 
                 <!-- ROW 2 (RIGHT) -->
@@ -432,16 +416,13 @@
                                 </div>
                             @endforeach
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
         </div>
     </section>
 
-    <section id="services" class="relative py-24 bg-white overflow-hidden">
+    <section id="services" class="relative py-16 bg-white overflow-hidden">
 
         <!-- Soft Background -->
         <div class="absolute inset-0 -z-10">
@@ -455,9 +436,9 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">
                     <span class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                        Solusi Kreatif
+                        Layanan
                     </span>
-                    untuk Brand Kamu
+                    Kami
                 </h2>
                 <p class="text-gray-600 text-sm mt-4 max-w-2xl mx-auto">
                     Kami membantu brand tampil lebih profesional, menarik, dan siap bersaing melalui solusi desain yang strategis.
@@ -465,7 +446,7 @@
             </div>
 
             <!-- SERVICES GRID -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 @foreach($services as $service)
                 <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
@@ -486,12 +467,12 @@
                     <!-- CONTENT -->
                     <div class="p-6 flex flex-col min-h-[220px]">
 
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">
+                        <h3 class="text-lg font-bold text-orange-500 mb-2">
                             {{ $service->name }}
                         </h3>
 
                         <p class="text-sm text-gray-600 leading-relaxed mb-6 line-clamp-3">
-                            {{ $service->short_description ?? 'Solusi desain profesional untuk meningkatkan nilai dan daya tarik brand Anda.' }}
+                            {{ $service->headline_description ?? 'Solusi desain profesional untuk meningkatkan nilai dan daya tarik brand Anda.' }}
                         </p>
 
                         <!-- ACTION -->
@@ -503,7 +484,7 @@
                                 Lihat Detail →
                             </a>
 
-                            <!-- CTA -->
+                            <!-- CTA
                             <a href="https://wa.me/628xxxxxxxxx"
                             target="_blank"
                             class="inline-flex items-center gap-2 px-4 py-2
@@ -512,21 +493,18 @@
                                     text-white text-xs font-semibold
                                     shadow-md hover:shadow-lg
                                     transition active:scale-95">
-
-                                <i class="fab fa-whatsapp text-sm"></i>
                                 Konsultasi Gratis
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                 </div>
                 @endforeach
-
             </div>
         </div>
     </section>
 
 
-    <section id="portfolio" class="relative py-24 bg-white overflow-hidden">
+    <section id="portfolio" class="relative py-16 bg-white overflow-hidden">
         <div class="absolute inset-0 -z-10">
             <div class="absolute top-10 left-10 w-96 h-96 bg-orange-200/30 blur-3xl rounded-full"></div>
             <div class="absolute bottom-0 right-10 w-[500px] h-[500px] bg-yellow-200/30 blur-3xl rounded-full"></div>
@@ -548,7 +526,7 @@
             </div>
 
             <!-- PORTFOLIO GRID -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
 
                 @foreach ($portfolios as $portfolio)
                 <div
@@ -622,7 +600,7 @@
                                 <i class="fas fa-phone bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-3xl"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold text-gray-900">Telepon</h4>
+                                <h4 class="text-xl font-bold text-gray-900">Telepon / Whatsapp</h4>
                                 <p class="text-gray-600 text-sm">+{{$contact->phone}}</p>
                             </div>
                         </div>
@@ -655,81 +633,28 @@
                     </div>
                 </div>
 
-                <!-- RIGHT FORM -->
-                <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg p-5">
-                    <form action="" method="POST" class="space-y-6">
+                <!-- RIGHT MAPS -->
+                <div class="bg-white/70 backdrop-blur-xl border border-orange-100 rounded-3xl shadow-lg p-3 overflow-hidden">
 
-                        <!-- Name -->
-                        <div>
-                            <label class="text-gray-700 text-sm font-semibold">Nama Lengkap</label>
-                            <div class="mt-2 rounded-xl p-[2px] bg-gray-200
-                                        focus-within:bg-gradient-to-r
-                                        focus-within:from-orange-500
-                                        focus-within:via-pink-500
-                                        focus-within:to-purple-600
-                                        transition">
-                                <input
-                                    type="text"
-                                    required
-                                    class="w-full px-5 py-3 rounded-[10px]
-                                        bg-white
-                                        border border-transparent
-                                        outline-none
-                                        focus:ring-0">
-                            </div>
+                    <div class="relative w-full h-[400px] rounded-2xl overflow-hidden">
+
+                        <!-- Google Maps Embed -->
+                        <iframe
+                            src="https://www.google.com/maps?q={{ urlencode($contact->address) }}&output=embed"
+                            class="w-full h-full border-0"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+
+                        <!-- Optional overlay label -->
+                        <div class="absolute top-4 left-4 bg-white/80 backdrop-blur px-4 py-2 rounded-xl text-sm font-semibold text-gray-800 shadow">
+                            Lokasi Kantor Kami
                         </div>
 
-                        <!-- Email -->
-                        <div>
-                            <label class="text-gray-700 text-sm font-semibold">Email</label>
-                            <div class="mt-2 rounded-xl p-[2px] bg-gray-200
-                                        focus-within:bg-gradient-to-r
-                                        focus-within:from-orange-500
-                                        focus-within:via-pink-500
-                                        focus-within:to-purple-600
-                                        transition">
-                                <input
-                                    type="email"
-                                    required
-                                    class="w-full px-5 py-3 rounded-[10px]
-                                        bg-white
-                                        border border-transparent
-                                        outline-none
-                                        focus:ring-0">
-                            </div>
-                        </div>
+                    </div>
 
-                        <!-- Message -->
-                        <div>
-                            <label class="text-gray-700 text-sm font-semibold">Pesan / Pertanyaan</label>
-                            <div class="mt-2 rounded-xl p-[2px] bg-gray-200
-                                        focus-within:bg-gradient-to-r
-                                        focus-within:from-orange-500
-                                        focus-within:via-pink-500
-                                        focus-within:to-purple-600
-                                        transition">
-                                <textarea
-                                    rows="4"
-                                    required
-                                    class="w-full px-5 py-3 rounded-[10px]
-                                        bg-white
-                                        border border-transparent
-                                        outline-none
-                                        resize-none
-                                        focus:ring-0"></textarea>
-                            </div>
-                        </div>
-
-                        <!-- Button -->
-                        <button
-                            class="w-full bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
-                                hover:opacity-90
-                                text-white py-3 rounded-xl font-semibold shadow-lg transition">
-                            Kirim Pesan
-                        </button>
-
-                    </form>
                 </div>
+
             </div>
         </div>
     </section>

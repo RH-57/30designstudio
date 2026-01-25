@@ -6,6 +6,7 @@
 
     <title>Cerita di Balik Karya Kami - 30Design Studio</title>
 
+    <link href="{{asset('assets/website/img/favicon.ico')}}" rel="icon">
     <meta name="description" content="30Design Studio adalah jasa desain packaging profesional dari konsep visual hingga proses cetak, membantu brand tampil menonjol dan siap dijual.">
     <meta name="keywords" content="jasa desain grafis, jasa desain logo, jasa desain packaging, studio desain kreatif">
     <meta name="robots" content="index, follow">

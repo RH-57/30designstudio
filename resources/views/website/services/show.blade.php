@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{{ $service->meta_title ?? $service->name }} - 30design.studio</title>
+    <link href="{{asset('assets/website/img/favicon.ico')}}" rel="icon">
     <meta name="description" content="{{ $service->meta_description ?? $service->headline_description }}">
 
     <meta property="og:title" content="{{ $service->meta_title ?? $service->name }}">
@@ -32,35 +33,87 @@
         <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-tight">
             {{ $service->headline }}
         </h1>
-
-        <p class="mt-6 max-w-2xl mx-auto text-white/90 text-base md:text-lg">
-            {{ $service->headline_description }}
-        </p>
-
-        <div class="mt-10 flex justify-center flex-wrap gap-4">
-            <a href="#portfolio"
-               class="px-8 py-3 rounded-xl bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
-                      text-white font-semibold shadow-lg hover:scale-105 transition">
-                Buat {{$service->name}} Sekarang
-            </a>
-        </div>
     </div>
 </section>
 
 <!-- ================= ABOUT SERVICE ================= -->
 <section class="py-24 bg-white">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
-            Solusi {{ $service->name }} untuk Brand yang Lebih Kuat
-        </h2>
+    <div class="max-w-6xl mx-auto px-6">
 
-        <p class="mt-8 text-gray-600 leading-relaxed text-base">
-            Kami menghadirkan layanan <strong>{{ $service->name }}</strong> yang dirancang secara strategis
-            untuk membantu brand tampil lebih profesional, konsisten, dan mudah dikenali.
-            Setiap desain dibuat dengan pendekatan visual yang kuat dan tujuan bisnis yang jelas.
-        </p>
+        <!-- Breadcrumb (optional tapi bikin premium feel) -->
+        <div class="text-sm text-gray-500 mb-6">
+            <a href="/" class="hover:text-orange-500">Beranda</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-800">{{ $service->name }}</span>
+        </div>
+
+        <!-- GRID -->
+        <div class="grid md:grid-cols-2 gap-14 items-start">
+
+            <!-- LEFT: CONTENT -->
+            <div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+                    {{ $service->name }}
+                </h1>
+
+                <p class="mt-6 text-gray-600 leading-relaxed">
+                    {!! $service->description !!}
+                </p>
+
+
+                <!-- CTA -->
+                <div class="mt-10 flex flex-wrap gap-4">
+                    <a href="https://wa.me/{{ $contact->phone }}"
+                       target="_blank"
+                       class="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-white
+                       bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600
+                       shadow-lg hover:opacity-90 transition">
+                        Konsultasi Sekarang
+                    </a>
+
+                    <a href="{{ route('portfolio') }}"
+                       class="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-gray-800 border border-gray-300 hover:bg-gray-50 transition">
+                        Lihat Portofolio
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT: VISUAL / IMAGE -->
+            <div class="relative">
+                <div class="bg-white/70 backdrop-blur border border-orange-100 rounded-3xl shadow-xl p-4">
+
+                    <img
+                        src="{{ asset('storage/' . $service->hero_image) }}"
+                        alt="{{ $service->name }}"
+                        class="rounded-2xl w-full object-cover"
+                    >
+
+                </div>
+            </div>
+        </div>
+
+        <!-- EXTRA SECTION (like spec/info box on bungkust) -->
+        <div class="mt-20 grid md:grid-cols-3 gap-8">
+
+            <div class="p-6 rounded-2xl border bg-white shadow-sm">
+                <h4 class="font-bold text-gray-900 mb-2">Cocok Untuk</h4>
+                <p class="text-sm text-gray-600">UMKM, Brand Fashion, Produk Makanan, Skincare, Corporate</p>
+            </div>
+
+            <div class="p-6 rounded-2xl border bg-white shadow-sm">
+                <h4 class="font-bold text-gray-900 mb-2">Output File</h4>
+                <p class="text-sm text-gray-600">AI, PDF, PNG, JPG siap cetak & digital</p>
+            </div>
+
+            <div class="p-6 rounded-2xl border bg-white shadow-sm">
+                <h4 class="font-bold text-gray-900 mb-2">Estimasi Waktu</h4>
+                <p class="text-sm text-gray-600">2 – 5 hari kerja tergantung kompleksitas</p>
+            </div>
+
+        </div>
     </div>
 </section>
+
 
 <!-- ================= PORTFOLIO ================= -->
 <section id="portfolio" class="py-20 bg-white">

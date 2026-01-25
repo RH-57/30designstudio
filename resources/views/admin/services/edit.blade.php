@@ -61,12 +61,7 @@
                 </div>
 
                 <div class="mb-3">
-                  <label for="headline_description" class="form-label">Headline Description</label>
-                  <textarea name="headline_description" class="form-control" rows="4" required>{{ old('headline_description', $service->headline_description) }}</textarea>
-                </div>
-
-                <div class="mb-3">
-                  <label for="hero_image" class="form-label">Hero Image</label><br>
+                  <label for="hero_image" class="form-label">Header Background</label><br>
                   @if($service->hero_image)
                     <img src="{{ asset('storage/'.$service->hero_image) }}" alt="Hero Image" class="img-thumbnail mb-2" width="200">
                   @endif
@@ -77,9 +72,16 @@
                 <h5 class="card-title">Service</h5>
 
                 <div class="mb-3">
-                  <label for="title" class="form-label">Name</label>
+                  <label for="name" class="form-label">Name</label>
                   <input type="text" name="name" class="form-control"
                          value="{{ old('name', $service->name) }}" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="description" id="editor" rows="6">
+                        {{old('description', $service->description)}}
+                    </textarea>
                 </div>
 
                 <div class="mb-3">
@@ -151,17 +153,29 @@
             Paragraph,
             Bold,
             Italic,
-            Font
+            Font,
+            List,
+            Table,
+            TableToolbar
         } from 'ckeditor5';
 
         ClassicEditor
             .create( document.querySelector( '#editor' ), {
                 licenseKey: 'GPL', // bebas, karena kamu pakai versi GPL
-                plugins: [ Essentials, Paragraph, Bold, Italic, Font ],
+                plugins: [ Essentials, Paragraph, Bold, Italic, Font, List, Table, TableToolbar ],
                 toolbar: [
                     'undo', 'redo', '|', 'bold', 'italic', '|',
+                    'bulletedList', 'numberedList', '|',     // ul / ol
+                    'insertTable', '|',                      // table
                     'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor'
-                ]
+                ],
+                table: {
+                    contentToolbar: [
+                        'tableColumn',
+                        'tableRow',
+                        'mergeTableCells'
+                    ]
+                }
             } )
             .then( editor => {
                 window.editor = editor;

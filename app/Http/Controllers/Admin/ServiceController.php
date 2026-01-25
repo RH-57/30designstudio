@@ -29,6 +29,7 @@ class ServiceController extends Controller
     public function store(Request $request) {
         $request->validate([
             'name'                  => 'required|string|max:100',
+            'description'           => 'required|string',
             'slug'                  => 'nullable|string|max:200|unique:services,slug,',
             'headline'              => 'required|string|max:255',
             'headline_description'  => 'required|string',
@@ -67,6 +68,7 @@ class ServiceController extends Controller
 
         Service::create([
             'name'                  => $request->name,
+            'description'           => $request->description,
             'slug'                  => $slug,
             'description'           => $request->description,
             'headline'              => $request->headline,
@@ -103,9 +105,9 @@ class ServiceController extends Controller
 
         $request->validate([
             'name'                  => 'required|string|max:100',
+            'description'           => 'required|string',
             'slug'                  => 'nullable|string|max:200|unique:services,slug,' . $service->id,
             'headline'              => 'required|string|max:255',
-            'headline_description'  => 'required|string',
             'hero_image'            => 'nullable|image|mimes:jpeg,jpg,png,webp|max:4096',
             'status'                => 'required|in:active,inactive',
             'meta_title'            => 'nullable|string|max:255',
@@ -162,10 +164,9 @@ class ServiceController extends Controller
 
         $service->update([
             'name'                  => $request->name,
-            'slug'                  => $slug,
             'description'           => $request->description,
+            'slug'                  => $slug,
             'headline'              => $request->headline,
-            'headline_description'  => $request->headline_description,
             'hero_image'            => $heroImagePath,
             'status'                => $request->status,
             'meta_title'            => $request->meta_title,

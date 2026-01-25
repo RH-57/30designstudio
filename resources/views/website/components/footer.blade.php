@@ -72,9 +72,9 @@
             <div>
                 <h3 class="text-gray-900 font-bold mb-4">Hubungi Kami</h3>
                 <ul class="space-y-3 text-sm text-gray-800">
-                    <li>{{$contact->address}}</li>
-                    <li>+{{$contact->phone}}</li>
-                    <li>{{$contact->email}}</li>
+                    <li>{{ $contact->address ?? 'null' }}</li>
+                    <li>{{ $contact->phone ? '+' . $contact->phone : 'null' }}</li>
+                    <li>{{ $contact->email ?? 'null' }}</li>
                 </ul>
 
                 <!-- CTA WHATSAPP -->
