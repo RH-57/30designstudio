@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
+use App\Models\Faq;
 use App\Models\MediaSocial;
 use App\Models\Service;
 use Illuminate\Http\Request;
@@ -22,12 +23,16 @@ class WebServiceController extends Controller
 
     public function show($slug) {
 
-        $mediasocials = Cache::remember('mediasocials', 31536000, function () {
+        $mediasocials = Cache::remember('mediasocials', 3600, function () {
             return  MediaSocial::all();
         });
 
-        $contact = Cache::remember('contacts', 31536000, function () {
+        $contact = Cache::remember('contacts', 3600, function () {
             return Contact::first();
+        });
+
+        $faqs = Cache::remember('faqs', 3600, function () {
+            return Faq::all();
         });
 
         // SERVICE + 3 PORTFOLIO TERBARU
@@ -53,7 +58,8 @@ class WebServiceController extends Controller
             'service',
             'mediasocials',
             'contact',
-            'services'
+            'services',
+            'faqs'
         ));
     }
 }

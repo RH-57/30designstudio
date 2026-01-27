@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\MediaSocialController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -55,6 +56,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::resource('/services', ServiceController::class);
     Route::delete('/service-images/{id}', [ServiceImageController::class, 'destroy'])->name('service-images.destroy');
     Route::resource('/portfolios', PortfolioController::class);
+    Route::resource('/faqs', FaqController::class);
 });
 
 Route::get('/', [WebHomeController::class, 'index'])->name('home');

@@ -501,25 +501,12 @@
         </div>
 
         <div class="space-y-4">
+            @foreach($faqs as $faq)
             <div class="bg-white border-2 border-gray-200 rounded-2xl p-6 hover:border-orange-300 transition-colors">
-                <h3 class="font-bold text-lg text-gray-900 mb-2">Berapa lama proses pengerjaannya?</h3>
-                <p class="text-gray-600">Waktu pengerjaan standar adalah 3-7 hari kerja, tergantung kompleksitas project dan antrian.</p>
+                <h3 class="font-bold text-lg text-gray-900 mb-2">{{$faq->question}}</h3>
+                <p class="text-gray-600">{{$faq->answer}}</p>
             </div>
-
-            <div class="bg-white border-2 border-gray-200 rounded-2xl p-6 hover:border-orange-300 transition-colors">
-                <h3 class="font-bold text-lg text-gray-900 mb-2">Apakah bisa revisi?</h3>
-                <p class="text-gray-600">Ya! Kami menyediakan revisi unlimited hingga Anda puas dengan hasilnya.</p>
-            </div>
-
-            <div class="bg-white border-2 border-gray-200 rounded-2xl p-6 hover:border-orange-300 transition-colors">
-                <h3 class="font-bold text-lg text-gray-900 mb-2">Format file apa yang akan diterima?</h3>
-                <p class="text-gray-600">Anda akan menerima file dalam format AI, PDF (print-ready), JPG, dan PNG.</p>
-            </div>
-
-            <div class="bg-white border-2 border-gray-200 rounded-2xl p-6 hover:border-orange-300 transition-colors">
-                <h3 class="font-bold text-lg text-gray-900 mb-2">Bagaimana cara pembayarannya?</h3>
-                <p class="text-gray-600">Pembayaran dapat dilakukan via transfer bank atau e-wallet. DP 50% untuk memulai project.</p>
-            </div>
+            @endforeach()
         </div>
 
     </div>
