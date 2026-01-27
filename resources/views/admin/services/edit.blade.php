@@ -6,208 +6,240 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Edit Service - Admin</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="{{asset('assets/admin/img/favicon.png')}}" rel="icon">
+  <link href="{{ asset('assets/admin/img/favicon.png') }}" rel="icon">
 
-  <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Nunito:300,400,600,700|Poppins:300,400,500,600,700" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="{{asset('assets/admin/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-  <link href="{{asset('assets/admin/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
-  <link href="{{asset('assets/admin/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
-  <link href="{{asset('assets/admin/vendor/ckeditor/ckeditor5.css')}}" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="{{asset('assets/admin/css/style.css')}}" rel="stylesheet">
+  <link href="{{ asset('assets/admin/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/admin/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/admin/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/admin/vendor/ckeditor/ckeditor5.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/admin/css/style.css') }}" rel="stylesheet">
 </head>
 
 <body>
-  @include('admin.components.header')
-  @include('admin.components.sidebar')
 
-  <main id="main" class="main">
+@include('admin.components.header')
+@include('admin.components.sidebar')
 
-    <div class="pagetitle">
-      <h1>Edit Service</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{ route('dashboards.index') }}">Home</a></li>
-          <li class="breadcrumb-item"><a href="{{ route('services.index') }}">Services</a></li>
-          <li class="breadcrumb-item active">Edit</li>
-        </ol>
-      </nav>
-    </div>
+<main id="main" class="main">
 
-    <section class="section">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="card">
-            <div class="card-body">
+  <div class="pagetitle">
+    <h1>Edit Service</h1>
+  </div>
 
-              <form action="{{ route('services.update', $service->id) }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                @method('PUT')
-                <h5 class="card-title">Page</h5>
+  <section class="section">
+    <div class="row">
+      <div class="col-lg-12">
 
-                <div class="mb-3">
-                  <label for="headline" class="form-label">Headline</label>
-                  <input type="text" name="headline" class="form-control"
-                         value="{{ old('headline', $service->headline) }}" required>
-                </div>
+        <div class="card">
+          <div class="card-body">
 
-                <div class="mb-3">
-                  <label for="hero_image" class="form-label">Header Background</label><br>
-                  @if($service->hero_image)
-                    <img src="{{ asset('storage/'.$service->hero_image) }}" alt="Hero Image" class="img-thumbnail mb-2" width="200">
-                  @endif
-                  <input type="file" name="hero_image" class="form-control">
-                  <small class="text-muted">Kosongkan jika tidak ingin mengganti</small>
-                </div>
+            {{-- ERROR --}}
+            @if ($errors->any())
+              <div class="alert alert-danger">
+                <ul class="mb-0">
+                  @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                  @endforeach
+                </ul>
+              </div>
+            @endif
 
-                <h5 class="card-title">Service</h5>
+            {{-- ================= FORM UPDATE SERVICE ================= --}}
+            <form id="updateForm"
+                  action="{{ route('services.update', $service->id) }}"
+                  method="POST"
+                  enctype="multipart/form-data">
 
-                <div class="mb-3">
-                  <label for="name" class="form-label">Name</label>
-                  <input type="text" name="name" class="form-control"
-                         value="{{ old('name', $service->name) }}" required>
-                </div>
+              @csrf
+              @method('PUT')
 
-                <div class="mb-3">
-                    <label for="description" class="form-label">Description</label>
-                    <textarea name="description" id="editor" rows="6">
-                        {{old('description', $service->description)}}
-                    </textarea>
-                </div>
+              <h5 class="card-title">Page</h5>
 
-                <div class="mb-3">
-                    <label for="status" class="form-label">Status</label>
-                    <select name="status" id="status" class="form-select" required>
-                        <option value="active" {{ old('status', $service->status) === 'active' ? 'selected' : '' }}>Active</option>
-                        <option value="inactive" {{ old('status', $service->status) === 'inactive' ? 'selected' : '' }}>Inactive</option>
-                    </select>
-                </div>
+              <div class="mb-3">
+                <label class="form-label">Headline</label>
+                <input type="text"
+                       name="headline"
+                       class="form-control"
+                       value="{{ old('headline', $service->headline) }}"
+                       required>
+              </div>
 
+              <div class="mb-3">
+                <label class="form-label">Header Background</label><br>
+                @if($service->hero_image)
+                  <img src="{{ asset('storage/'.$service->hero_image) }}"
+                       class="img-thumbnail mb-2"
+                       width="200">
+                @endif
+                <input type="file" name="hero_image" class="form-control">
+              </div>
 
-                <h5 class="card-title">SEO Meta</h5>
-                <div class="mb-3">
-                  <label for="meta_title" class="form-label">Meta Title</label>
-                  <input type="text" name="meta_title" class="form-control"
-                         value="{{ old('meta_title', $service->meta_title) }}">
-                </div>
+              <h5 class="card-title">Service</h5>
 
-                <div class="mb-3">
-                  <label for="meta_description" class="form-label">Meta Description</label>
-                  <textarea name="meta_description" class="form-control" rows="2">{{ old('meta_description', $service->meta_description) }}</textarea>
-                </div>
+              <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text"
+                       name="name"
+                       class="form-control"
+                       value="{{ old('name', $service->name) }}"
+                       required>
+              </div>
 
-                <div class="mb-3">
-                  <label for="meta_image" class="form-label">Meta Image</label><br>
-                  @if($service->meta_image)
-                    <img src="{{ asset('storage/'.$service->meta_image) }}" alt="Meta Image" class="img-thumbnail mb-2" width="200">
-                  @endif
-                  <input type="file" name="meta_image" class="form-control">
-                  <small class="text-muted">Kosongkan jika tidak ingin mengganti</small>
-                </div>
+              <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea name="description" id="editor" rows="6">
+{{ old('description', $service->description) }}
+                </textarea>
+              </div>
 
-                <div class="mt-4">
-                  <button type="submit" class="btn btn-primary">Update</button>
-                  <a href="{{ route('services.index') }}" class="btn btn-secondary">Cancel</a>
-                </div>
+              <div class="mb-3">
+                <label class="form-label">Status</label>
+                <select name="status" class="form-select" required>
+                  <option value="active" {{ $service->status === 'active' ? 'selected' : '' }}>Active</option>
+                  <option value="inactive" {{ $service->status === 'inactive' ? 'selected' : '' }}>Inactive</option>
+                </select>
+              </div>
 
-              </form>
+              {{-- UPLOAD NEW GALLERY --}}
+              <h5 class="card-title">Add Gallery Images</h5>
 
-            </div>
+              <div class="mb-3">
+                <input type="file"
+                       name="gallery_images[]"
+                       id="galleryInput"
+                       class="form-control"
+                       multiple
+                       accept="image/*">
+                <div id="preview" class="d-flex flex-wrap gap-2 mt-3"></div>
+              </div>
+
+              <h5 class="card-title">SEO Meta</h5>
+
+              <div class="mb-3">
+                <label class="form-label">Meta Title</label>
+                <input type="text"
+                       name="meta_title"
+                       class="form-control"
+                       value="{{ old('meta_title', $service->meta_title) }}">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Meta Description</label>
+                <textarea name="meta_description"
+                          class="form-control"
+                          rows="2">{{ old('meta_description', $service->meta_description) }}</textarea>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Meta Image</label><br>
+                @if($service->meta_image)
+                  <img src="{{ asset('storage/'.$service->meta_image) }}"
+                       class="img-thumbnail mb-2"
+                       width="200">
+                @endif
+                <input type="file" name="meta_image" class="form-control">
+              </div>
+
+              <div class="text-end mt-4">
+                <button class="btn btn-primary">Update</button>
+                <a href="{{ route('services.index') }}" class="btn btn-secondary">Cancel</a>
+              </div>
+
+            </form>
+            {{-- ================= END FORM ================= --}}
+
+            {{-- ================= EXISTING GALLERY (OUTSIDE FORM) ================= --}}
+            @if($service->images->count())
+              <hr>
+              <h5 class="mt-4 mb-3">Existing Gallery Images</h5>
+
+              <div class="row g-3">
+                @foreach($service->images as $img)
+                  <div class="col-md-2 col-sm-4">
+                    <div class="position-relative border rounded overflow-hidden">
+                      <img src="{{ asset('storage/'.$img->image_path) }}"
+                           class="w-100"
+                           style="height:120px; object-fit:cover;">
+
+                      <form action="{{ route('service-images.destroy', $img->id) }}"
+                            method="POST"
+                            class="position-absolute top-0 end-0 m-1"
+                            onsubmit="return confirm('Hapus gambar ini?')">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-sm btn-danger">&times;</button>
+                      </form>
+                    </div>
+                  </div>
+                @endforeach
+              </div>
+            @endif
+            {{-- ================= END GALLERY ================= --}}
+
           </div>
         </div>
+
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  @include('admin.components.footer')
+</main>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
-    <i class="bi bi-arrow-up-short"></i>
-  </a>
+@include('admin.components.footer')
 
-  <!-- Vendor JS Files -->
-  <script src="{{asset('assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('assets/admin/js/main.js')}}"></script>
-  <script type="importmap">
-    {
-        "imports": {
-            "ckeditor5": "/assets/admin/vendor/ckeditor/ckeditor5.js",
-            "ckeditor5/": "/assets/admin/vendor/ckeditor/"
-        }
-    }
-    </script>
+<script src="{{ asset('assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('assets/admin/js/main.js') }}"></script>
 
-    <script type="module">
-        import {
-            ClassicEditor,
-            Essentials,
-            Paragraph,
-            Bold,
-            Italic,
-            Font,
-            List,
-            Table,
-            TableToolbar
-        } from 'ckeditor5';
+<script type="importmap">
+{
+  "imports": {
+    "ckeditor5": "/assets/admin/vendor/ckeditor/ckeditor5.js",
+    "ckeditor5/": "/assets/admin/vendor/ckeditor/"
+  }
+}
+</script>
 
-        ClassicEditor
-            .create( document.querySelector( '#editor' ), {
-                licenseKey: 'GPL', // bebas, karena kamu pakai versi GPL
-                plugins: [ Essentials, Paragraph, Bold, Italic, Font, List, Table, TableToolbar ],
-                toolbar: [
-                    'undo', 'redo', '|', 'bold', 'italic', '|',
-                    'bulletedList', 'numberedList', '|',     // ul / ol
-                    'insertTable', '|',                      // table
-                    'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor'
-                ],
-                table: {
-                    contentToolbar: [
-                        'tableColumn',
-                        'tableRow',
-                        'mergeTableCells'
-                    ]
-                }
-            } )
-            .then( editor => {
-                window.editor = editor;
-            } )
-            .catch( error => {
-                console.error( error );
-            } );
-    </script>
+<script type="module">
+import { ClassicEditor, Essentials, Paragraph, Bold, Italic, Font } from 'ckeditor5';
 
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    @if(session('success'))
-    <script>
-        Swal.fire({
-            icon: 'success',
-            title: 'Success!',
-            text: "{{ session('success') }}",
-            timer: 2000,
-            showConfirmButton: false
-        })
-    </script>
-    @endif
+ClassicEditor.create(document.querySelector('#editor'), {
+  licenseKey: 'GPL',
+  plugins: [Essentials, Paragraph, Bold, Italic, Font],
+  toolbar: ['undo','redo','|','bold','italic','|','fontSize','fontColor']
+}).then(editor => window.editor = editor);
+</script>
 
-    @if(session('error'))
-    <script>
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: "{{ session('error') }}",
-            timer: 3000,
-            showConfirmButton: true
-        })
-    </script>
-    @endif
+<script>
+document.getElementById('galleryInput')?.addEventListener('change', e => {
+  const preview = document.getElementById('preview');
+  preview.innerHTML = '';
+  [...e.target.files].forEach(file => {
+    const reader = new FileReader();
+    reader.onload = ev => {
+      const img = document.createElement('img');
+      img.src = ev.target.result;
+      img.style.width = '120px';
+      img.style.height = '80px';
+      img.style.objectFit = 'cover';
+      img.classList.add('border','rounded');
+      preview.appendChild(img);
+    };
+    reader.readAsDataURL(file);
+  });
+});
+</script>
+
+<script>
+document.getElementById('updateForm').addEventListener('submit', () => {
+  if (window.editor) {
+    document.querySelector('#editor').value = window.editor.getData();
+  }
+});
+</script>
+
 </body>
 </html>

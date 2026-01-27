@@ -84,6 +84,7 @@
                   <label class="col-sm-2 col-form-label">Headline Background</label>
                   <div class="col-sm-10">
                     <input type="file" name="hero_image" class="form-control">
+                    <small class="text-muted">Max 4 Mb</small>
                   </div>
                 </div>
 
@@ -115,6 +116,28 @@
                     </div>
                 </div>
 
+                <h5 class="card-title">Images</h5>
+
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">Service Images (Gallery)</label>
+                    <div class="col-sm-10">
+
+                        <input type="file"
+                            name="gallery_images[]"
+                            id="galleryInput"
+                            multiple
+                            accept="image/*"
+                            class="form-control">
+
+                        <small class="text-muted">You can upload multiple images (JPG, PNG, WEBP), Max 4MB</small>
+
+                        <!-- Preview container -->
+                        <div id="preview" class="d-flex flex-wrap gap-2 mt-3"></div>
+
+                    </div>
+                </div>
+
+
                 <h5 class="card-title">SEO Meta</h5>
 
                 <div class="row mb-3">
@@ -135,6 +158,7 @@
                   <label class="col-sm-2 col-form-label">Meta Image</label>
                   <div class="col-sm-10">
                     <input type="file" name="meta_image" class="form-control">
+                    <small class="text-muted">Max 4 Mb</small>
                   </div>
                 </div>
 
@@ -160,6 +184,7 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+  <script src="{{asset('assets/admin/js/main.js')}}"></script>
   <script src="{{asset('assets/admin/vendor/apexcharts/apexcharts.min.js')}}"></script>
   <script src="{{asset('assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 

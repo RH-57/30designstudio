@@ -32,6 +32,7 @@ class WebServiceController extends Controller
 
         // SERVICE + 3 PORTFOLIO TERBARU
         $service = Service::with([
+                'images',
                 'portfolios' => function ($query) {
                     $query->latest()->take(3);
                 },

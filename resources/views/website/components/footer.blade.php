@@ -1,13 +1,13 @@
-<footer class="relative bg-gradient-to-b from-white via-white to-purple-50
-               text-gray-700 pt-20 pb-10 overflow-hidden">
+<footer class="relative py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
 
     <!-- GRADIENT DEKORASI -->
-    <div class="absolute inset-0 pointer-events-none -z-10">
-        <div class="absolute -top-24 -left-24 w-80 h-80
-                    bg-orange-200/30 blur-3xl rounded-full"></div>
-        <div class="absolute bottom-0 right-0 w-[420px] h-[420px]
-                    bg-purple-300/30 blur-3xl rounded-full"></div>
+    <div class="absolute inset-0 opacity-10 pointer-events-none">
+        <div class="absolute inset-0"
+            style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0);
+                    background-size: 40px 40px;">
+        </div>
     </div>
+
 
     <div class="max-w-screen-xl mx-auto px-6 md:px-20">
 
@@ -27,15 +27,15 @@
                 </a>
 
                 <!-- DESKRIPSI -->
-                <p class="text-gray-800 text-sm leading-relaxed">
+                <p class="text-white text-sm leading-relaxed">
                     Jasa desain packaging profesional dari konsep visual hingga siap cetak,
                     membantu produk tampil menonjol dan siap bersaing di pasaran.
                 </p>
 
                 <!-- FOLLOW US -->
                 <div>
-                    <p class="text-sm font-semibold text-gray-900 mb-2">Follow Us</p>
-                    <div class="flex items-center gap-4 text-lg text-gray-500">
+                    <p class="text-sm font-semibold text-white mb-2">Follow Us</p>
+                    <div class="flex items-center gap-4 text-lg text-white">
                         @foreach($mediasocials as $medsos)
                         <a href="{{$medsos->url}}" class="hover:text-orange-500 transition">
                             <i class="fab {{$medsos->icon}}"></i>
@@ -49,29 +49,29 @@
 
             <!-- NAVIGASI -->
             <div>
-                <h3 class="text-gray-900 font-bold mb-4">Navigasi</h3>
+                <h3 class="text-white font-bold mb-4">Navigasi</h3>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="{{route('home')}}" class="text-gray-800 hover:text-orange-500 transition">Beranda</a></li>
-                    <li><a href="{{route('about')}}" class="text-gray-800 hover:text-orange-500 transition">Tentang Kami</a></li>
-                    <li><a href="#our-clients" class="text-gray-800 hover:text-orange-500 transition">Portofolio</a></li>
-                    <li><a href="#contact" class="text-gray-800 hover:text-orange-500 transition">Kontak</a></li>
+                    <li><a href="{{route('home')}}" class="text-white hover:text-orange-500 transition">Beranda</a></li>
+                    <li><a href="{{route('about')}}" class="text-white hover:text-orange-500 transition">Tentang Kami</a></li>
+                    <li><a href="{{route('portfolio')}}" class="text-white hover:text-orange-500 transition">Portofolio</a></li>
+                    <li><a href="{{route('contact')}}" class="text-white hover:text-orange-500 transition">Kontak</a></li>
                 </ul>
             </div>
 
             <!-- LAYANAN -->
             <div>
-                <h3 class="text-gray-900 font-bold mb-4">Layanan Kami</h3>
+                <h3 class="text-white font-bold mb-4">Layanan Kami</h3>
                 <ul class="space-y-2 text-sm">
                     @foreach($services as $service)
-                    <li><a href="" class="text-gray-800 hover:text-pink-500 transition">{{$service->name}}</a></li>
+                    <li><a href="{{route('show.service', $service->slug)}}" class="text-white hover:text-pink-500 transition">{{$service->name}}</a></li>
                     @endforeach
                 </ul>
             </div>
 
             <!-- KONTAK -->
             <div>
-                <h3 class="text-gray-900 font-bold mb-4">Hubungi Kami</h3>
-                <ul class="space-y-3 text-sm text-gray-800">
+                <h3 class="text-white font-bold mb-4">Hubungi Kami</h3>
+                <ul class="space-y-3 text-sm text-white">
                     <li>{{ $contact->address ?? 'null' }}</li>
                     <li>{{ $contact->phone ? '+' . $contact->phone : 'null' }}</li>
                     <li>{{ $contact->email ?? 'null' }}</li>
@@ -93,10 +93,11 @@
         <!-- COPYRIGHT -->
         <div class="border-t border-gray-200 mt-14 pt-6
                     flex flex-col md:flex-row items-center justify-between
-                    text-sm text-gray-500 gap-3">
+                    text-sm text-white gap-3">
 
             <span>
-                © 2026 <strong class="text-gray-700">30designstudio</strong>. All Rights Reserved.
+                © 2026 <strong class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-800
+                                  bg-clip-text text-transparent">30designstudio</strong>. All Rights Reserved.
             </span>
 
             <span>

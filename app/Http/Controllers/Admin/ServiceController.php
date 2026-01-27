@@ -31,6 +31,7 @@ class ServiceController extends Controller
             'name'                  => 'required|string|max:100',
             'description'           => 'required|string',
             'slug'                  => 'nullable|string|max:200|unique:services,slug,',
+            'gallery_images.*'      => 'image|mimes:jpg,jpeg,png,webp|max:4096',
             'headline'              => 'required|string|max:255',
             'headline_description'  => 'required|string',
             'hero_image'            => 'required|image|mimes:jpeg,jpg,png,webp|max:4096',
@@ -55,6 +56,7 @@ class ServiceController extends Controller
             $heroImagePath = $path;
         }
 
+
         $metaImagePath = null;
         if ($request->hasFile('meta_image')) {
             $file = $request->file('meta_image');
@@ -66,7 +68,7 @@ class ServiceController extends Controller
             $metaImagePath = $path;
         }
 
-        Service::create([
+        $service = Service::create([
             'name'                  => $request->name,
             'description'           => $request->description,
             'slug'                  => $slug,
@@ -80,6 +82,23 @@ class ServiceController extends Controller
             'meta_image'            => $metaImagePath,
         ]);
 
+        if ($request->hasFile('gallery_images')) {
+            foreach ($request->file('gallery_images') as $imageFile) {
+
+                $image = $manager->read($imageFile->getPathname());
+                $encoded = $image->encode(new WebpEncoder(quality: 75));
+
+                $filename = uniqid() . '.webp';
+                $path = 'services/gallery/' . $filename;
+
+                Storage::disk('public')->put($path, (string) $encoded);
+
+                $service->images()->create([
+                    'image_path' => $path
+                ]);
+            }
+        }
+
         Cache::forget('services');
 
         return redirect()->route('services.index')->with('success', 'Service Created Successfully');
@@ -88,7 +107,7 @@ class ServiceController extends Controller
 
     public function show($id)
     {
-        $service = Service::findOrFail($id);
+        $service = Service::with('images')->findOrFail($id);
         return view('admin.services.show', compact('service'));
     }
 
@@ -107,6 +126,7 @@ class ServiceController extends Controller
             'name'                  => 'required|string|max:100',
             'description'           => 'required|string',
             'slug'                  => 'nullable|string|max:200|unique:services,slug,' . $service->id,
+            'gallery_images.*'      => 'image|mimes:jpg,jpeg,png,webp|max:4096',
             'headline'              => 'required|string|max:255',
             'hero_image'            => 'nullable|image|mimes:jpeg,jpg,png,webp|max:4096',
             'status'                => 'required|in:active,inactive',
@@ -174,6 +194,24 @@ class ServiceController extends Controller
             'meta_image'            => $metaImagePath,
         ]);
 
+        if ($request->hasFile('gallery_images')) {
+            foreach ($request->file('gallery_images') as $imageFile) {
+
+                $image = $manager->read($imageFile->getPathname());
+                $encoded = $image->encode(new WebpEncoder(quality: 75));
+
+                $filename = uniqid() . '.webp';
+                $path = 'services/gallery/' . $filename;
+
+                Storage::disk('public')->put($path, (string) $encoded);
+
+                $service->images()->create([
+                    'image_path' => $path
+                ]);
+            }
+        }
+
+
         Cache::forget('services');
 
         return redirect()
@@ -185,13 +223,18 @@ class ServiceController extends Controller
     {
         $service = Service::findOrFail($id);
 
-        // Hapus gambar jika ada
         if ($service->hero_image && Storage::disk('public')->exists($service->hero_image)) {
             Storage::disk('public')->delete($service->hero_image);
         }
-        // Hapus gambar jika ada
+
         if ($service->meta_image && Storage::disk('public')->exists($service->meta_image)) {
             Storage::disk('public')->delete($service->meta_image);
+        }
+
+        foreach ($service->images as $img) {
+            if (Storage::disk('public')->exists($img->image_path)) {
+                Storage::disk('public')->delete($img->image_path);
+            }
         }
 
         $service->delete();
@@ -199,4 +242,5 @@ class ServiceController extends Controller
 
         return redirect()->route('services.index')->with('success', 'Service berhasil dihapus');
     }
+
 }

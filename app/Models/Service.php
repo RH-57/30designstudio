@@ -25,4 +25,8 @@ class Service extends Model
     public function portfolios() {
         return $this->hasMany(Portfolio::class);
     }
+
+    public function images() {
+        return $this->hasMany(ServiceImage::class);
+    }
 }

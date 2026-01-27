@@ -211,117 +211,6 @@
         </div>
     </section>
 
-    <!--
-    <section id="about" class="relative py-24 bg-white overflow-hidden">
-
-
-        <div class="absolute inset-0 -z-10">
-            <div class="absolute top-10 right-10 w-96 h-96 bg-orange-100/40 blur-3xl rounded-full"></div>
-            <div class="absolute -bottom-20 left-0 w-[500px] h-[500px] bg-pink-100/40 blur-3xl rounded-full"></div>
-        </div>
-
-        <div class="w-full max-w-screen-xl mx-auto px-4 md:px-20">
-
-            <div class="text-center mb-14">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">
-                    Cerita di Balik
-                    <span class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                        Karya Kami
-                    </span>
-                </h2>
-                <p class="text-gray-600 text-sm mt-4 max-w-2xl mx-auto">
-                    30Design.Studio adalah studio desain kreatif yang membantu brand tampil profesional
-                    melalui desain visual yang kuat, strategis, dan relevan.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
-
-                <div class="flex justify-center relative">
-                    <div id="scroll-image-container" class="relative
-                        w-[240px] h-[240px]
-                        md:w-[300px] md:h-[300px]
-                        lg:w-[340px] lg:h-[340px]
-                        rounded-full
-                        flex items-center justify-center">
-
-                        <div class="absolute inset-0 rounded-full
-                            bg-gradient-to-br from-orange-500 via-pink-500 to-purple-600
-                            opacity-60 blur-xl">
-                        </div>
-
-                        <img
-                            src="{{ asset('assets/website/img/about.png') }}"
-                            alt="Contoh Desain"
-                            id="scroll-image"
-                            class="relative z-10 w-[200%] h-auto object-contain drop-shadow-2xl">
-                    </div>
-                </div>
-
-                <div class="space-y-8">
-
-                    <p class="text-gray-700 text-sm leading-relaxed">
-                        Kami percaya desain adalah alat komunikasi brand.
-                        Dengan pendekatan kolaboratif, kami menerjemahkan kebutuhan klien
-                        menjadi desain yang efektif dan bermakna.
-                    </p>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-
-                        <div class="flex items-start gap-4">
-                            <div class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-4xl">
-                                <i class="fas fa-palette"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-bold text-gray-800">Desain Berkarakter</h4>
-                                <p class="text-gray-600 text-sm">
-                                    Setiap desain dibuat unik dan disesuaikan dengan identitas brand Anda.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-4xl">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-bold text-gray-800">Kreatif & Strategis</h4>
-                                <p class="text-gray-600 text-sm">
-                                    Menggabungkan kreativitas visual dengan strategi branding yang tepat.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-4xl">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-bold text-gray-800">Tepat Waktu</h4>
-                                <p class="text-gray-600 text-sm">
-                                    Komitmen menyelesaikan project sesuai timeline yang disepakati.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-4xl">
-                                <i class="fas fa-layer-group"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-bold text-gray-800">Siap Digital & Cetak</h4>
-                                <p class="text-gray-600 text-sm">
-                                    Desain optimal untuk kebutuhan online maupun produksi cetak.
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section> -->
 
     <section id="our-clients" class="relative py-16 bg-white overflow-hidden">
 
@@ -516,7 +405,7 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">
                     <span class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                        Karya Terbaik
+                        Portofolio
                     </span>
                      Kami
                 </h2>
@@ -563,6 +452,8 @@
 
         </div>
     </section>
+
+    @include('website.components.cta')
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="relative py-24 bg-white overflow-hidden">

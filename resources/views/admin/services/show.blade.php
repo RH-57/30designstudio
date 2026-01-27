@@ -23,6 +23,7 @@
 
   <!-- Template Main CSS File -->
   <link href="{{asset('assets/admin/css/style.css')}}" rel="stylesheet">
+  <link href="{{asset('assets/admin/css/custom.css')}}" rel="stylesheet">
 
 </head>
 
@@ -58,7 +59,9 @@
                     <li class="nav-item">
                         <button class="nav-link" data-bs-toggle="tab" data-bs-target="#service-info">Info</button>
                     </li>
-
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#service-images">Images</button>
+                    </li>
                     <li class="nav-item">
                         <button class="nav-link" data-bs-toggle="tab" data-bs-target="#service-seo">SEO</button>
                     </li>
@@ -112,7 +115,43 @@
                                 </p>
                             </div>
                         </div>
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <strong>Description</strong>
+                                <p class="editor-content">{!!$service->description!!}</p>
+                            </div>
+                        </div>
                     </div><!-- End Info Tab -->
+
+                    <!-- Images Tab -->
+                    <div class="tab-pane fade" id="service-images">
+                        <h5 class="card-title">Service Images</h5>
+
+                        @if($service->images->count())
+                            <div class="row g-3">
+                                @foreach($service->images as $image)
+                                    <div class="col-md-3">
+                                        <div class="card shadow-sm">
+                                            <img
+                                                src="{{ asset('storage/' . $image->image_path) }}"
+                                                class="img-fluid rounded-top"
+                                                style="height:180px; object-fit:cover;"
+                                                alt="Service image">
+
+                                            <div class="card-body text-center p-2">
+                                                <small class="text-muted">
+                                                    Uploaded: {{ $image->created_at->format('d M Y') }}
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @else
+                            <p class="text-muted">Belum ada gambar untuk service ini.</p>
+                        @endif
+                    </div>
+
 
                     <!-- SEO Tab -->
                     <div class="tab-pane fade" id="service-seo">
