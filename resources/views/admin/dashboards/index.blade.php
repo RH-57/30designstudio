@@ -60,15 +60,15 @@
               <div class="card info-card sales-card">
 
                 <div class="card-body">
-                  <h5 class="card-title">Services </h5>
+                  <h5 class="card-title">Services</h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                       <i class="bi bi-check"></i>
                     </div>
                     <div class="ps-3">
-                      <h6></h6>
-                      <span class="text-muted small pt-2 ps-1">Done</span>
+                      <h6>{{$service}}</h6>
+                      <span class="text-muted small pt-2 ps-1">Service</span>
 
                     </div>
                   </div>
@@ -82,15 +82,15 @@
               <div class="card info-card revenue-card">
 
                 <div class="card-body">
-                  <h5 class="card-title">Packages</h5>
+                  <h5 class="card-title">Brands</h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-currency-dollar"></i>
+                      <i class="bi bi-check"></i>
                     </div>
                     <div class="ps-3">
-                      <h6></h6>
-                      <span class="text-muted small pt-2 ps-1">Package</span>
+                      <h6>{{$brand}}</h6>
+                      <span class="text-muted small pt-2 ps-1">Brand</span>
 
                     </div>
                   </div>
@@ -102,15 +102,15 @@
               <div class="card info-card revenue-card">
 
                 <div class="card-body">
-                  <h5 class="card-title">Articles</h5>
+                  <h5 class="card-title">Portfolio</h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-envelope"></i>
+                      <i class="bi bi-check"></i>
                     </div>
                     <div class="ps-3">
-                      <h6></h6>
-                      <span class="text-muted small pt-2 ps-1">Published</span>
+                      <h6>{{$portfolio}}</h6>
+                      <span class="text-muted small pt-2 ps-1">Porfolio</span>
 
                     </div>
                   </div>
