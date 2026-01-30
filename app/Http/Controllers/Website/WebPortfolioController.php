@@ -8,6 +8,7 @@ use App\Models\Contact;
 use App\Models\MediaSocial;
 use App\Models\Portfolio;
 use App\Models\Service;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
@@ -36,12 +37,20 @@ class WebPortfolioController extends Controller
             return Portfolio::with(['service', 'images'])->get();
         });
 
+        $testimonials = Cache::remember('testimonials_latest_3', 3600, function () {
+            return Testimonial::orderBy('created_at', 'desc')
+                ->take(3)
+                ->get();
+        });
+
+
         return view('website.portfolio', compact(
             'mediasocials',
             'contact',
             'services',
             'brands',
-            'portfolios'
+            'portfolios',
+            'testimonials'
         ));
     }
 }

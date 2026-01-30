@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\MediaSocialController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ServiceImageController;
+use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\Website\WebAboutController;
@@ -57,6 +58,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::delete('/service-images/{id}', [ServiceImageController::class, 'destroy'])->name('service-images.destroy');
     Route::resource('/portfolios', PortfolioController::class);
     Route::resource('/faqs', FaqController::class);
+    Route::resource('/testimonials', TestimonialController::class);
 });
 
 Route::get('/', [WebHomeController::class, 'index'])->name('home');

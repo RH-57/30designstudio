@@ -244,14 +244,14 @@
                 <div class="flex flex-wrap gap-4 pt-4">
                     <a href="https://wa.me/{{ $contact->phone }}"
                        target="_blank"
-                       class="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full font-bold shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                       class="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-xl font-bold shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
                         <i class="fab fa-whatsapp text-xl"></i>
                         <span>Tanya Harga Sekarang</span>
                         <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                     </a>
 
                     <a href="{{ route('portfolio') }}"
-                       class="inline-flex items-center gap-3 px-8 py-4 bg-white text-gray-800 rounded-full font-bold border-2 border-gray-200 hover:border-orange-500 hover:bg-orange-50 transform hover:scale-105 transition-all duration-300">
+                       class="inline-flex items-center gap-3 px-8 py-4 bg-white text-gray-800 rounded-xl font-bold border-2 border-gray-200 hover:border-orange-500 hover:bg-orange-50 transform hover:scale-105 transition-all duration-300">
                         <i class="fas fa-folder-open"></i>
                         <span>Lihat Semua Portfolio</span>
                     </a>

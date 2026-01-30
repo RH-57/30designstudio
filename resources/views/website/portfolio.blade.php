@@ -203,66 +203,47 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
-                    <div class="flex gap-1 text-yellow-400 mb-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        "Desain packaging dari 30Design Studio benar-benar meningkatkan penjualan produk kami. Profesional dan detail!"
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-pink-500"></div>
-                        <div>
-                            <p class="font-bold text-gray-900">Sarah Johnson</p>
-                            <p class="text-sm text-gray-600">CEO, Beauty Brand</p>
-                        </div>
-                    </div>
-                </div>
+                @foreach ($testimonials as $testimonial)
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
 
-                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
-                    <div class="flex gap-1 text-yellow-400 mb-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        "Kerjasama yang sangat menyenangkan. Tim sangat responsif dan hasil desainnya selalu memuaskan!"
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-purple-500"></div>
-                        <div>
-                            <p class="font-bold text-gray-900">Ahmad Rizki</p>
-                            <p class="text-sm text-gray-600">Owner, F&B Business</p>
+                        {{-- Rating --}}
+                        <div class="flex gap-1 text-yellow-400 mb-4">
+                            @for ($i = 1; $i <= 5; $i++)
+                                <i class="fas fa-star {{ $i <= $testimonial->rating ? '' : 'opacity-30' }}"></i>
+                            @endfor
                         </div>
-                    </div>
-                </div>
 
-                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
-                    <div class="flex gap-1 text-yellow-400 mb-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        "File desain yang diberikan sangat rapi dan siap cetak. Tidak perlu revisi berkali-kali. Recommended!"
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-orange-500"></div>
-                        <div>
-                            <p class="font-bold text-gray-900">Lisa Permata</p>
-                            <p class="text-sm text-gray-600">Marketing Manager</p>
+                        {{-- Message --}}
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            "{{ $testimonial->message }}"
+                        </p>
+
+                        {{-- User --}}
+                        <div class="flex items-center gap-4">
+                            @if ($testimonial->photo)
+                                <img
+                                    src="{{ asset('storage/' . $testimonial->photo) }}"
+                                    alt="{{ $testimonial->name }}"
+                                    class="w-12 h-12 rounded-full object-cover"
+                                >
+                            @else
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-pink-500 flex items-center justify-center text-white font-bold">
+                                    {{ strtoupper(substr($testimonial->name, 0, 1)) }}
+                                </div>
+                            @endif
+
+                            <div>
+                                <p class="font-bold text-gray-900">{{ $testimonial->name }}</p>
+                                @if ($testimonial->company)
+                                    <p class="text-sm text-gray-600">{{ $testimonial->company }}</p>
+                                @endif
+                            </div>
                         </div>
+
                     </div>
-                </div>
+                @endforeach
             </div>
+
         </div>
     </section>
 

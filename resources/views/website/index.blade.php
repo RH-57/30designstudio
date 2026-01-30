@@ -338,7 +338,7 @@
             <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 @foreach($services as $service)
-                <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+                <div class="group bg-white rounded overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
 
                     <!-- IMAGE -->
                     <div class="relative h-64 overflow-hidden">
@@ -419,7 +419,7 @@
 
                 @foreach ($portfolios as $portfolio)
                 <div
-                    class="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
+                    class="group relative rounded overflow-hidden shadow-lg hover:shadow-2xl transition cursor-pointer"
                     onclick='openPortfolio(@json(
                         $portfolio->images
                             ->map(fn($img) => asset("storage/".$img->image))
